@@ -19,6 +19,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+<script>
+/* Set before first paint so scroll-reveal styles only apply when JS can undo them.
+   Also skip the reveal entirely for users who asked for reduced motion. */
+(function(){
+  var d = document.documentElement;
+  if (!window.matchMedia || !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    d.className += ' js';
+  }
+})();
+</script>
 <style>
 :root{
   --paper:#FBF8F3;
@@ -80,6 +90,14 @@ nav{
 }
 .nav-cv:hover{background:var(--ink);color:var(--paper)!important}
 @media(max-width:780px){.nav-links a:not(.nav-cv){display:none}}
+/* reading-progress hairline along the bottom of the nav */
+.prog{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--coral);
+  transition:width .08s linear}
+/* highlight the section currently in view */
+.nav-links a.active{color:var(--coral)}
+.nav-links a.active::after{
+  content:'';position:absolute;left:0;right:0;bottom:-5px;height:1.5px;background:var(--coral);
+}
 
 /* ============ hero ============ */
 header{position:relative;padding:86px 0 70px;overflow:hidden}
@@ -426,8 +444,10 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
 .foot-in .r{margin-left:auto;font-family:var(--mono);font-size:11.5px}
 
 /* ============ reveal + lightbox ============ */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
-.rv.in{opacity:1;transform:none}
+/* Only hide for reveal when JS is actually running — otherwise a script failure
+   would leave the whole page blank. The .js class is set inline in <head>. */
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
 .lb{position:fixed;inset:0;z-index:200;background:rgba(21,23,28,.94);display:none;
   align-items:center;justify-content:center;padding:26px;cursor:zoom-out}
 .lb.on{display:flex}
@@ -452,14 +472,15 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
     <a href="#top" class="nav-name">Chaitali Ranalkar</a>
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#how">How I work</a>
       <a href="#experience">Experience</a>
       <a href="#work">Work</a>
+      <a href="#how">How I work</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
       <a href="Chaitali-Ranalkar-Resume.pdf" class="nav-cv" download>Résumé ↓</a>
     </div>
   </div>
+  <div class="prog" id="prog"></div>
 </nav>
 
 <header id="top">
@@ -551,82 +572,6 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
   </div>
 </section>
 
-<section id="how" class="rule-top">
-  <div class="wrap">
-    <p class="label rv">How I work</p>
-    <h2 class="rv">Four things I've come<br>to believe about data.</h2>
-    <p class="lede rv" style="margin-bottom:42px">
-      None of these are on my résumé. They're the rules I actually work by — and each one cost me
-      something to learn.
-    </p>
-
-    <div class="prin">
-
-      <div class="pr rv">
-        <div class="pr-n">01</div>
-        <h3>An honest unknown beats a confident guess.</h3>
-        <p>
-          The pressure in analysis is always to produce an answer. But a wrong cause sends people
-          to fix the wrong thing, and they lose weeks before anyone notices. If the data won't
-          support a conclusion, the finding <em>is</em> that it won't.
-        </p>
-        <div class="ev">
-          <span class="ev-l">In practice</span>
-          <span>I spent four query chains trying to explain DS009's delivery times. Every
-          hypothesis failed. I shipped it as <b>unresolved, flagged for on-site investigation</b>
-          — which is the only honest version.</span>
-        </div>
-      </div>
-
-      <div class="pr rv">
-        <div class="pr-n">02</div>
-        <h3>Build where the data already lives.</h3>
-        <p>
-          The most capable tool is worthless if using it means moving sensitive data somewhere it
-          isn't allowed to go. Constraints on where data can travel aren't obstacles to design
-          around — they're the first thing the design has to answer to.
-        </p>
-        <div class="ev">
-          <span class="ev-l">In practice</span>
-          <span>Audit documents can't leave the firm, so the NLP summarisation tool runs
-          <b>entirely on-premises</b>. No external API, no documents in transit, same result.</span>
-        </div>
-      </div>
-
-      <div class="pr rv">
-        <div class="pr-n">03</div>
-        <h3>If I can't show the work, I rebuild it.</h3>
-        <p>
-          Most of what I build belongs to clients, and none of it can go in a portfolio. That's not
-          a reason to have nothing to show — it's a reason to reconstruct the same problem on data
-          that's free to travel.
-        </p>
-        <div class="ev">
-          <span class="ev-l">In practice</span>
-          <span>The partner dashboard is confidential, so I rebuilt the same reporting on a
-          <b>public dataset</b> — same DAX, same utilisation logic, nothing to redact.</span>
-        </div>
-      </div>
-
-      <div class="pr rv">
-        <div class="pr-n">04</div>
-        <h3>The repetitive part is the interesting part.</h3>
-        <p>
-          Every manual process that runs monthly is a standing invitation. The work isn't just
-          faster afterwards — it's more consistent, and it frees the hours that actually need
-          judgement for the questions that actually need judgement.
-        </p>
-        <div class="ev">
-          <span class="ev-l">In practice</span>
-          <span>Reconciliation checks that once ate a cycle now run as a validated pipeline —
-          <b>100+ per cycle, 40% less manual effort</b> in ITGC testing.</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section id="experience" class="rule-top">
   <div class="wrap">
     <p class="label rv">Experience</p>
@@ -634,7 +579,7 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
     <div class="tl">
 
       <div class="job now rv">
-        <div class="job-when">July 2025 — Present · Mumbai</div>
+        <div class="job-when">July 2025 — Present · Pune</div>
         <h3>Senior Executive</h3>
         <p class="job-org">KKC &amp; Associates LLP</p>
         <ul>
@@ -940,6 +885,82 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
   </div>
 </section>
 
+<section id="how" class="rule-top">
+  <div class="wrap">
+    <p class="label rv">How I work</p>
+    <h2 class="rv">Four things I've come<br>to believe about data.</h2>
+    <p class="lede rv" style="margin-bottom:42px">
+      Tools change every couple of years. These don't. Each one came out of the work above —
+      usually the hard way.
+    </p>
+
+    <div class="prin">
+
+      <div class="pr rv">
+        <div class="pr-n">01</div>
+        <h3>An honest unknown beats a confident guess.</h3>
+        <p>
+          The pressure in analysis is always to produce an answer. But a wrong cause sends people
+          to fix the wrong thing, and they lose weeks before anyone notices. If the data won't
+          support a conclusion, the finding <em>is</em> that it won't.
+        </p>
+        <div class="ev">
+          <span class="ev-l">In practice</span>
+          <span>I spent four query chains trying to explain DS009's delivery times. Every
+          hypothesis failed. I shipped it as <b>unresolved, flagged for on-site investigation</b>
+          — which is the only honest version.</span>
+        </div>
+      </div>
+
+      <div class="pr rv">
+        <div class="pr-n">02</div>
+        <h3>Build where the data already lives.</h3>
+        <p>
+          The most capable tool is worthless if using it means moving sensitive data somewhere it
+          isn't allowed to go. Constraints on where data can travel aren't obstacles to design
+          around — they're the first thing the design has to answer to.
+        </p>
+        <div class="ev">
+          <span class="ev-l">In practice</span>
+          <span>Audit documents can't leave the firm, so the NLP summarisation tool runs
+          <b>entirely on-premises</b>. No external API, no documents in transit, same result.</span>
+        </div>
+      </div>
+
+      <div class="pr rv">
+        <div class="pr-n">03</div>
+        <h3>If I can't show the work, I rebuild it.</h3>
+        <p>
+          Most of what I build belongs to clients, and none of it can go in a portfolio. That's not
+          a reason to have nothing to show — it's a reason to reconstruct the same problem on data
+          that's free to travel.
+        </p>
+        <div class="ev">
+          <span class="ev-l">In practice</span>
+          <span>The partner dashboard is confidential, so I rebuilt the same reporting on a
+          <b>public dataset</b> — same DAX, same utilisation logic, nothing to redact.</span>
+        </div>
+      </div>
+
+      <div class="pr rv">
+        <div class="pr-n">04</div>
+        <h3>The repetitive part is the interesting part.</h3>
+        <p>
+          Every manual process that runs monthly is a standing invitation. The work isn't just
+          faster afterwards — it's more consistent, and it frees the hours that actually need
+          judgement for the questions that actually need judgement.
+        </p>
+        <div class="ev">
+          <span class="ev-l">In practice</span>
+          <span>Reconciliation checks that once ate a cycle now run as a validated pipeline —
+          <b>100+ per cycle, 40% less manual effort</b> in ITGC testing.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="skills" class="rule-top">
   <div class="wrap">
     <p class="label rv">Toolkit</p>
@@ -1128,6 +1149,30 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
     }, { threshold: 0.5 });
     barIO.observe(bars);
   }
+
+  // ---- reading progress + active section in the nav ----
+  var prog = document.getElementById('prog');
+  var navLinks = [].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  var sections = navLinks.map(function (a) {
+    return document.querySelector(a.getAttribute('href'));
+  });
+  var ticking = false;
+  function onScroll() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+
+    // the section whose top has most recently passed the nav
+    var idx = -1, mark = window.scrollY + 140;
+    sections.forEach(function (s, i) {
+      if (s && s.offsetTop <= mark) idx = i;
+    });
+    navLinks.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
 
   // ---- lightbox: dashboards are detail-heavy and unreadable at card size ----
   var lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img');

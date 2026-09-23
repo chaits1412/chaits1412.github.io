@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chaitali Ranalkar — Data Analyst</title>
-<meta name="description" content="Data analyst in Mumbai. Senior Executive at KKC & Associates LLP. Python automation, Power BI, SQL and audit analytics — cutting manual effort by 40% and review time by 50%.">
+<meta name="description" content="Data analyst in Pune. Senior Executive at KKC & Associates LLP. Python automation, Power BI, SQL and audit analytics — cutting manual effort by 40% and review time by 50%.">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Chaitali Ranalkar — Data Analyst">
-<meta property="og:description" content="I spend my days with the data nobody else wants to open. Audit analytics, Python automation and Power BI in Mumbai.">
+<meta property="og:description" content="I spend my days with the data nobody else wants to open. Audit analytics, Python automation and Power BI.">
 <meta property="og:url" content="https://chaits1412.github.io/">
 <meta property="og:image" content="https://chaits1412.github.io/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -181,6 +181,31 @@ section{padding:92px 0}
   border-left:3px solid var(--coral);padding-left:22px;margin:30px 0 0;font-style:italic;
 }
 
+/* ============ principles ============ */
+.prin{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:6px}
+@media(max-width:820px){.prin{grid-template-columns:1fr;gap:16px}}
+.pr{
+  position:relative;background:var(--card);border:1px solid var(--rule);border-radius:15px;
+  padding:28px 28px 24px;overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s;
+}
+.pr:hover{transform:translateY(-3px);border-color:var(--ink-3);
+  box-shadow:0 16px 40px -22px rgba(21,23,28,.3)}
+.pr-n{
+  position:absolute;top:14px;right:20px;font-family:var(--serif);font-size:3.6rem;
+  font-weight:600;line-height:1;color:var(--paper-2);user-select:none;
+}
+.pr h3{font-size:1.16rem;margin:0 0 10px;position:relative;max-width:22ch}
+.pr p{font-size:.96rem;color:var(--ink-2);margin:0 0 18px;position:relative}
+.pr .ev{
+  display:flex;gap:9px;align-items:flex-start;border-top:1px solid var(--rule-2);
+  padding-top:14px;font-size:.855rem;color:var(--ink-3);line-height:1.5;
+}
+.pr .ev-l{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--coral);flex:none;margin-top:3px;
+}
+.pr .ev b{color:var(--ink-2);font-weight:600}
+
 /* ============ experience ============ */
 .tl{position:relative;padding-left:34px}
 .tl::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--rule)}
@@ -255,6 +280,19 @@ figure:last-child{margin-bottom:0}
 .elim-h{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--gold);margin:0 0 8px}
 .elim-t{font-family:var(--serif);font-size:1.3rem;font-weight:600;letter-spacing:-.02em;margin:0 0 22px;line-height:1.3}
+/* plain-language gloss, so a reader outside quick-commerce isn't lost */
+.gloss{
+  display:flex;gap:13px;align-items:flex-start;background:var(--card);
+  border:1px solid var(--rule);border-radius:10px;padding:16px 18px;margin-bottom:22px;
+}
+.gloss-q{
+  flex:none;width:21px;height:21px;border-radius:50%;background:var(--paper-2);
+  border:1px solid var(--rule);color:var(--ink-3);font-family:var(--mono);font-size:12px;
+  display:grid;place-items:center;margin-top:2px;
+}
+.gloss p{margin:0!important;font-size:.9rem;color:var(--ink-2);line-height:1.6}
+.gloss b{color:var(--ink);font-weight:600}
+
 .cmp{width:100%;border-collapse:collapse;font-size:.92rem;margin-bottom:26px;
   font-variant-numeric:tabular-nums;background:var(--card);border:1px solid var(--rule);border-radius:9px}
 .cmp th,.cmp td{padding:11px 15px;text-align:left;border-bottom:1px solid var(--rule-2)}
@@ -414,6 +452,7 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
     <a href="#top" class="nav-name">Chaitali Ranalkar</a>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#how">How I work</a>
       <a href="#experience">Experience</a>
       <a href="#work">Work</a>
       <a href="#skills">Skills</a>
@@ -431,7 +470,7 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
         <span class="avail"><span class="dot"></span> Senior Executive · KKC &amp; Associates LLP</span>
         <h1>Chaitali<br>Ranalkar<em>.</em></h1>
         <p class="role">Data analyst working in <b>audit analytics</b> — Python automation, Power BI and SQL.</p>
-        <p class="where">Mumbai, India &nbsp;·&nbsp; MSc Big Data Analytics, St. Xavier's College</p>
+        <p class="where">Pune, India &nbsp;·&nbsp; MSc Big Data Analytics, St. Xavier's College</p>
         <p class="hero-p">
           I spend my days with the data nobody else wants to open — control logs,
           reconciliation files, hundred-page policy documents. Then I make them answer questions.
@@ -508,6 +547,82 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
           A flagged unknown is more useful to a business than a confident wrong answer.
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="rule-top">
+  <div class="wrap">
+    <p class="label rv">How I work</p>
+    <h2 class="rv">Four things I've come<br>to believe about data.</h2>
+    <p class="lede rv" style="margin-bottom:42px">
+      None of these are on my résumé. They're the rules I actually work by — and each one cost me
+      something to learn.
+    </p>
+
+    <div class="prin">
+
+      <div class="pr rv">
+        <div class="pr-n">01</div>
+        <h3>An honest unknown beats a confident guess.</h3>
+        <p>
+          The pressure in analysis is always to produce an answer. But a wrong cause sends people
+          to fix the wrong thing, and they lose weeks before anyone notices. If the data won't
+          support a conclusion, the finding <em>is</em> that it won't.
+        </p>
+        <div class="ev">
+          <span class="ev-l">In practice</span>
+          <span>I spent four query chains trying to explain DS009's delivery times. Every
+          hypothesis failed. I shipped it as <b>unresolved, flagged for on-site investigation</b>
+          — which is the only honest version.</span>
+        </div>
+      </div>
+
+      <div class="pr rv">
+        <div class="pr-n">02</div>
+        <h3>Build where the data already lives.</h3>
+        <p>
+          The most capable tool is worthless if using it means moving sensitive data somewhere it
+          isn't allowed to go. Constraints on where data can travel aren't obstacles to design
+          around — they're the first thing the design has to answer to.
+        </p>
+        <div class="ev">
+          <span class="ev-l">In practice</span>
+          <span>Audit documents can't leave the firm, so the NLP summarisation tool runs
+          <b>entirely on-premises</b>. No external API, no documents in transit, same result.</span>
+        </div>
+      </div>
+
+      <div class="pr rv">
+        <div class="pr-n">03</div>
+        <h3>If I can't show the work, I rebuild it.</h3>
+        <p>
+          Most of what I build belongs to clients, and none of it can go in a portfolio. That's not
+          a reason to have nothing to show — it's a reason to reconstruct the same problem on data
+          that's free to travel.
+        </p>
+        <div class="ev">
+          <span class="ev-l">In practice</span>
+          <span>The partner dashboard is confidential, so I rebuilt the same reporting on a
+          <b>public dataset</b> — same DAX, same utilisation logic, nothing to redact.</span>
+        </div>
+      </div>
+
+      <div class="pr rv">
+        <div class="pr-n">04</div>
+        <h3>The repetitive part is the interesting part.</h3>
+        <p>
+          Every manual process that runs monthly is a standing invitation. The work isn't just
+          faster afterwards — it's more consistent, and it frees the hours that actually need
+          judgement for the questions that actually need judgement.
+        </p>
+        <div class="ev">
+          <span class="ev-l">In practice</span>
+          <span>Reconciliation checks that once ate a cycle now run as a validated pipeline —
+          <b>100+ per cycle, 40% less manual effort</b> in ITGC testing.</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -673,6 +788,16 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
       <div class="elim" id="elim">
         <p class="elim-h">The finding I couldn't close</p>
         <p class="elim-t">One dark store behaved unlike every other store in the network.</p>
+
+        <div class="gloss">
+          <span class="gloss-q">?</span>
+          <p>
+            <b>Dark stores</b> are the small neighbourhood warehouses quick-commerce apps deliver
+            from — stocked like a shop, but closed to walk-in customers and serving only a delivery
+            radius. Every order in the dataset is picked, packed and dispatched from one of them.
+            <b>DS009</b> is simply the ID of one such store, and it was the outlier.
+          </p>
+        </div>
 
         <table class="cmp">
           <tr><th>Metric</th><th>DS009</th><th>Network average</th></tr>
@@ -924,7 +1049,7 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
 
 <footer>
   <div class="foot-in">
-    <span>© <span id="yr">2026</span> Chaitali Ranalkar — Mumbai, India</span>
+    <span>© <span id="yr">2026</span> Chaitali Ranalkar — Pune, India</span>
     <span class="r">Built by hand.</span>
   </div>
 </footer>

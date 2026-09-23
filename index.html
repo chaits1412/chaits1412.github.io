@@ -8,7 +8,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Chaitali Ranalkar — Data Analyst">
-<meta property="og:description" content="I spend my days with the data nobody else wants to open. Audit analytics, Python automation and Power BI.">
+<meta property="og:description" content="Audit data is rarely tidy. Getting it to answer a clear question is the part I enjoy. Python automation, Power BI and SQL.">
 <meta property="og:url" content="https://chaits1412.github.io/">
 <meta property="og:image" content="https://chaits1412.github.io/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -413,8 +413,19 @@ figure:last-child{margin-bottom:0}
 .cert:last-child{border-bottom:none}
 .cert-ic{flex:none;width:32px;height:32px;border-radius:8px;background:var(--paper-2);
   border:1px solid var(--rule);display:grid;place-items:center;margin-top:1px}
-.cert-n{font-size:.97rem;font-weight:550;margin:0}
+.cert-n{font-size:.97rem;font-weight:550;margin:0;line-height:1.4}
 .cert-m{font-size:.86rem;color:var(--ink-3);margin:1px 0 0;font-family:var(--mono)}
+.cert-d{font-size:.87rem;color:var(--ink-2);margin:7px 0 0;line-height:1.55}
+/* most recent certificate carries a little more weight */
+.cert-new{background:var(--card);border:1px solid var(--rule);border-radius:11px;
+  padding:16px 17px;margin-bottom:6px}
+.cert-ic-hl{background:rgba(220,78,46,.08);border-color:rgba(220,78,46,.25)}
+.cert-tag{
+  display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--coral);background:rgba(220,78,46,.09);
+  border:1px solid rgba(220,78,46,.25);padding:2px 7px;border-radius:999px;
+  margin-left:7px;vertical-align:middle;font-weight:500;
+}
 
 /* ============ contact ============ */
 .contact{background:var(--ink);color:var(--paper);padding:92px 0}
@@ -493,8 +504,7 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
         <p class="role">Data analyst working in <b>audit analytics</b> — Python automation, Power BI and SQL.</p>
         <p class="where">Pune, India &nbsp;·&nbsp; MSc Big Data Analytics, St. Xavier's College</p>
         <p class="hero-p">
-          I spend my days with the data nobody else wants to open — control logs,
-          reconciliation files, hundred-page policy documents. Then I make them answer questions.
+          Audit data is rarely tidy. Getting it to answer a clear question is the part I enjoy.
         </p>
         <div class="cta">
           <a class="btn btn-pri" href="#work">See my work ↓</a>
@@ -968,11 +978,13 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
     <div class="skills">
       <div class="skgrp rv">
         <h4>Programming &amp; DS</h4>
-        <ul><li>Python</li><li>R</li><li>Machine Learning</li><li>Deep Learning</li><li>Statistical Analysis</li></ul>
+        <ul><li>Python</li><li>R</li><li>Machine Learning</li><li>Deep Learning</li>
+          <li>Statistical Analysis</li><li>Generative AI</li><li>Prompt Engineering</li></ul>
       </div>
       <div class="skgrp rv">
         <h4>Analytics &amp; BI</h4>
-        <ul><li>SQL</li><li>Power BI</li><li>DAX</li><li>Excel</li><li>Data Modelling</li><li>Data Transformation</li></ul>
+        <ul><li>SQL</li><li>Power BI</li><li>DAX</li><li>Excel</li><li>Data Modelling</li>
+          <li>Data Transformation</li><li>Database Design</li><li>Query Optimisation</li></ul>
       </div>
       <div class="skgrp rv">
         <h4>Automation &amp; Audit</h4>
@@ -980,7 +992,8 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
       </div>
       <div class="skgrp rv">
         <h4>Specialisations</h4>
-        <ul><li>Microsoft Power BI</li><li>Python Automation</li><li>Business Intelligence</li><li>Problem Solving</li><li>Analytical Thinking</li></ul>
+        <ul><li>Microsoft Power BI</li><li>Python Automation</li><li>AI-Assisted SQL</li>
+          <li>Business Intelligence</li><li>Problem Solving</li><li>Analytical Thinking</li></ul>
       </div>
     </div>
   </div>
@@ -1014,6 +1027,22 @@ footer{background:var(--ink);color:rgba(251,248,243,.45);
       </div>
       <div class="rv">
         <p class="label">Certificates</p>
+
+        <div class="cert cert-new">
+          <span class="cert-ic cert-ic-hl">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#DC4E2E" stroke-width="2">
+              <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/>
+              <circle cx="12" cy="12" r="3.4"/></svg>
+          </span>
+          <div>
+            <p class="cert-n">Generative AI SQL Database Specialist with ChatGPT
+              <span class="cert-tag">Latest</span></p>
+            <p class="cert-m">Vanderbilt University · Coursera · Jul 2026</p>
+            <p class="cert-d">AI-assisted SQL generation, database design, prompt engineering,
+              AI-powered SQL analysis and query optimisation.</p>
+          </div>
+        </div>
+
         <div class="cert">
           <span class="cert-ic">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C08A1E" stroke-width="2">

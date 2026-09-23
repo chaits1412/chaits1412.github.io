@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chaitali Ranalkar — Data Analyst</title>
+<meta name="description" content="Data analyst in Pune, India. Python, SQL, Power BI and Tableau. End-to-end analytics: raw data through root-cause investigation to business recommendation.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chaitali Ranalkar — Data Analyst">
+<meta property="og:description" content="Most analytics portfolios show you a dashboard. This one shows you an investigation.">
+<meta property="og:url" content="https://chaits1412.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230B0D10'/><path d='M22 68 L38 44 L52 58 L78 26' stroke='%235ED3B0' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0B0D10;
+  --surface:#13161C;
+  --surface-2:#191D25;
+  --line:#242932;
+  --text:#E8EAEF;
+  --muted:#99A1AF;
+  --faint:#6B7280;
+  --accent:#5ED3B0;
+  --accent-soft:rgba(94,211,176,.12);
+  --amber:#E8B45C;
+  --maxw:1080px;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+a{color:inherit}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,13,16,.82);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px}
+.nav-name{font-weight:650;letter-spacing:-.01em;text-decoration:none;font-size:15px}
+.nav-links{margin-left:auto;display:flex;gap:22px;font-size:14px}
+.nav-links a{color:var(--muted);text-decoration:none;transition:color .18s}
+.nav-links a:hover{color:var(--accent)}
+@media(max-width:620px){.nav-links a:not(.keep){display:none}}
+
+/* ---------- hero ---------- */
+header{padding:92px 0 64px;border-bottom:1px solid var(--line)}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 20px;
+}
+h1{
+  font-size:clamp(2.6rem,7vw,4.4rem);line-height:1.04;letter-spacing:-.035em;
+  font-weight:700;margin:0 0 20px;
+}
+.role{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--muted);margin:0 0 28px;font-weight:450}
+.role b{color:var(--text);font-weight:600}
+.pitch{font-size:clamp(1.05rem,2.2vw,1.22rem);max-width:60ch;color:#C6CBD4;margin:0 0 38px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 20px;border-radius:10px;text-decoration:none;
+  font-size:15px;font-weight:550;transition:all .18s;border:1px solid transparent;
+}
+.btn-pri{background:var(--accent);color:#06231C}
+.btn-pri:hover{background:#7ce0c2;transform:translateY(-1px)}
+.btn-sec{border-color:var(--line);color:var(--text);background:var(--surface)}
+.btn-sec:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- hook ---------- */
+.hook{padding:56px 0;border-bottom:1px solid var(--line);background:var(--surface)}
+.hook p{
+  font-size:clamp(1.25rem,3.4vw,1.85rem);line-height:1.38;letter-spacing:-.02em;
+  font-weight:600;margin:0;max-width:26ch;
+}
+.hook .b{color:var(--accent)}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border-bottom:1px solid var(--line)}
+.stat{background:var(--bg);padding:30px 24px}
+.stat .n{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;letter-spacing:-.03em;
+  font-variant-numeric:tabular-nums;line-height:1.1}
+.stat .l{font-size:13px;color:var(--faint);margin-top:6px;line-height:1.4}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- sections ---------- */
+section{padding:84px 0}
+.sec-head{margin-bottom:44px}
+.sec-label{
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);margin:0 0 14px;
+}
+h2{font-size:clamp(1.7rem,4.2vw,2.5rem);letter-spacing:-.03em;font-weight:700;margin:0 0 14px;line-height:1.15}
+.sec-sub{color:var(--muted);max-width:62ch;margin:0;font-size:1.05rem}
+
+/* ---------- featured ---------- */
+.feat{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface)}
+.feat-top{padding:36px 36px 30px;border-bottom:1px solid var(--line)}
+.tag{
+  display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);background:var(--accent-soft);
+  padding:5px 11px;border-radius:5px;margin-bottom:18px;
+}
+.feat-top h3{font-size:clamp(1.35rem,3.2vw,1.9rem);letter-spacing:-.025em;margin:0 0 14px;line-height:1.2}
+.feat-top p{color:var(--muted);margin:0 0 22px;max-width:64ch}
+.pipe{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--mono);font-size:12.5px}
+.pipe span{background:var(--surface-2);border:1px solid var(--line);padding:6px 11px;border-radius:6px;color:#C6CBD4}
+.pipe i{color:var(--faint);font-style:normal}
+
+.findings{padding:32px 36px;display:grid;gap:26px}
+.find{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.find-n{
+  font-family:var(--mono);font-size:12px;color:var(--accent);
+  border:1px solid var(--line);border-radius:6px;padding:4px 9px;margin-top:2px;
+}
+.find h4{margin:0 0 7px;font-size:1.05rem;font-weight:600;letter-spacing:-.01em}
+.find p{margin:0;color:var(--muted);font-size:.97rem}
+.find b{color:var(--text);font-weight:600}
+
+/* the standout callout */
+.callout{
+  margin:6px 36px 36px;padding:28px 30px;border-radius:13px;
+  background:linear-gradient(180deg,rgba(232,180,92,.07),rgba(232,180,92,.02));
+  border:1px solid rgba(232,180,92,.28);
+}
+.callout .cl{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--amber);margin:0 0 13px;
+}
+.callout p{margin:0 0 14px;color:#D4D8E0;font-size:1rem}
+.callout p:last-child{margin-bottom:0}
+.callout b{color:#fff;font-weight:600}
+.callout .kicker{
+  font-weight:600;color:#fff;font-size:1.07rem;letter-spacing:-.01em;
+  border-left:2px solid var(--amber);padding-left:15px;
+}
+.ds-table{
+  width:100%;border-collapse:collapse;margin:18px 0;font-size:.92rem;
+  font-variant-numeric:tabular-nums;
+}
+.ds-table th,.ds-table td{padding:9px 12px;text-align:left;border-bottom:1px solid rgba(232,180,92,.18)}
+.ds-table th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-weight:500}
+.ds-table td:first-child{color:var(--muted)}
+.ds-table .bad{color:#F0A0A0;font-weight:600}
+
+.shots{padding:0 36px 36px;display:grid;gap:22px}
+figure{margin:0}
+figure img{
+  width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);
+  background:var(--surface-2);cursor:zoom-in;transition:border-color .18s;
+}
+figure img:hover{border-color:var(--accent)}
+figcaption{font-size:.87rem;color:var(--faint);margin-top:10px;line-height:1.5}
+figcaption b{color:var(--muted);font-weight:600}
+
+.feat-foot{padding:0 36px 36px}
+@media(max-width:700px){
+  .feat-top,.findings,.shots,.feat-foot{padding-left:22px;padding-right:22px}
+  .callout{margin-left:22px;margin-right:22px;padding:22px}
+  .find{grid-template-columns:1fr;gap:9px}
+  /* Keep the DS009 comparison on one line per row at phone width */
+  .ds-table{font-size:.82rem}
+  .ds-table th,.ds-table td{padding:8px 6px}
+  .ds-table th:first-child,.ds-table td:first-child{width:40%}
+}
+
+/* ---------- work grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.card{
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);
+  display:flex;flex-direction:column;transition:border-color .2s,transform .2s;
+}
+.card:hover{border-color:#39414F;transform:translateY(-2px)}
+.card-img{background:var(--surface-2);border-bottom:1px solid var(--line)}
+.card-img img{width:100%;height:auto;display:block;cursor:zoom-in}
+.card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.card h3{font-size:1.12rem;margin:0 0 9px;letter-spacing:-.015em;font-weight:600}
+.card p{color:var(--muted);font-size:.95rem;margin:0 0 16px;flex:1}
+.card b{color:var(--text);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{
+  font-family:var(--mono);font-size:11px;color:var(--faint);
+  border:1px solid var(--line);padding:4px 9px;border-radius:5px;
+}
+.rmse{width:100%;border-collapse:collapse;font-size:.87rem;margin:0 0 16px;
+  font-variant-numeric:tabular-nums}
+.rmse td{padding:6px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.rmse tr:last-child td{border-bottom:none}
+.rmse td:last-child{text-align:right;font-family:var(--mono)}
+.rmse .win td{color:var(--accent);font-weight:600}
+
+/* ---------- toolkit ---------- */
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:800px){.tools{grid-template-columns:1fr}}
+.tool{border:1px solid var(--line);border-radius:12px;padding:24px;background:var(--surface)}
+.tool h4{margin:0 0 14px;font-size:.82rem;font-family:var(--mono);letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);font-weight:500}
+.tool ul{margin:0;padding:0;list-style:none}
+.tool li{padding:5px 0;color:var(--muted);font-size:.95rem;border-bottom:1px solid transparent}
+
+/* ---------- contact ---------- */
+.contact{border-top:1px solid var(--line);background:var(--surface)}
+.contact h2{margin-bottom:18px}
+.contact p{color:var(--muted);max-width:52ch;margin:0 0 30px}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:13.5px;color:var(--faint)}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:14px}
+.foot-in .r{margin-left:auto;display:flex;gap:18px}
+.foot-in a{color:var(--faint);text-decoration:none}
+.foot-in a:hover{color:var(--accent)}
+
+/* ---------- lightbox ---------- */
+.lb{
+  position:fixed;inset:0;z-index:100;background:rgba(6,8,11,.95);
+  display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out;
+}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:8px;border:1px solid var(--line)}
+.lb-x{position:absolute;top:20px;right:26px;color:var(--muted);font-size:30px;
+  background:none;border:none;cursor:pointer;line-height:1}
+.lb-x:hover{color:#fff}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="#top" class="nav-name">Chaitali Ranalkar</a>
+    <div class="nav-links">
+      <a href="#featured">Featured</a>
+      <a href="#work">Work</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#contact" class="keep">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <p class="eyebrow">Data Analyst · Pune, India</p>
+    <h1>Chaitali Ranalkar</h1>
+    <p class="role">Python · SQL (BigQuery) · Power BI · Tableau &nbsp;—&nbsp; <b>MSc Big Data Analytics</b></p>
+    <p class="pitch">
+      I take messy business problems from raw data through SQL investigation and
+      root-cause analysis to a recommendation someone can actually act on.
+    </p>
+    <div class="cta">
+      <a class="btn btn-pri" href="#featured">See the work &darr;</a>
+      <a class="btn btn-sec" href="https://github.com/chaits1412" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-sec" href="https://www.linkedin.com/in/chaitali-ranalkar-1410cr" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<div class="hook">
+  <div class="wrap">
+    <p>Most analytics portfolios show you a dashboard.<br><span class="b">This one shows you an investigation.</span></p>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="n">150K</div><div class="l">customer searches analysed</div></div>
+  <div class="stat"><div class="n">26</div><div class="l">documented SQL queries</div></div>
+  <div class="stat"><div class="n">4</div><div class="l">hypotheses tested and ruled out</div></div>
+  <div class="stat"><div class="n">5</div><div class="l">dashboards built end to end</div></div>
+</div>
+
+<section id="featured">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-label">Featured project</p>
+      <h2>Data on Demand</h2>
+      <p class="sec-sub">
+        A diagnostic analytics project on a simulated quick-commerce business, built to answer
+        one question: where are the hidden operational gaps between what customers want and
+        what the business actually delivers?
+      </p>
+    </div>
+
+    <div class="feat">
+      <div class="feat-top">
+        <span class="tag">End-to-end analysis</span>
+        <h3>Quick-Commerce Gap &amp; Customer Experience Analysis</h3>
+        <p>
+          Real Zepto and Blinkit data isn't public, so I generated a realistic
+          <b>150,000-search / 78,936-order</b> dataset simulating the operational reality of a
+          quick-commerce platform — customers, products, inventory, dark stores, deliveries,
+          fees and support tickets — then investigated it as though it were live.
+        </p>
+        <div class="pipe">
+          <span>Python</span><i>&rarr;</i>
+          <span>BigQuery SQL</span><i>&rarr;</i>
+          <span>Root-cause analysis</span><i>&rarr;</i>
+          <span>Power BI</span><i>&rarr;</i>
+          <span>Recommendations</span>
+        </div>
+      </div>
+
+      <div class="findings">
+        <div class="find">
+          <span class="find-n">01</span>
+          <div>
+            <h4>The product availability gap</h4>
+            <p><b>54.28%</b> of customer searches ended in <i>Product Unavailable</i> or
+            <i>Limited Options</i> — only 44.32% found full availability. The single largest
+            demand-supply gap in the dataset, concentrated in identifiable SKUs:
+            <b>Cola (78.4%)</b>, <b>Sanitary Pads (75.9%)</b> and <b>Power Bank (71.3%)</b>.</p>
+          </div>
+        </div>
+        <div class="find">
+          <span class="find-n">02</span>
+          <div>
+            <h4>Order accuracy by category</h4>
+            <p>Wrong Item and Missing Item complaints clustered sharply. <b>Women's Clothing</b>
+            drew the highest complaint count at <b>625</b> — nearly 50% more than the next
+            category, Travel Essentials at 423.</p>
+          </div>
+        </div>
+        <div class="find">
+          <span class="find-n">03</span>
+          <div>
+            <h4>Where support load actually sits</h4>
+            <p>Tickets spread across six recurring issue types, with Refund Requests and Wrong
+            Item complaints <b>tied at 1,076 each</b>. Cancellation rate was tested as a driver
+            but showed too little variation to matter.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p class="cl">The finding I couldn't close</p>
+        <p class="kicker">One dark store behaved unlike every other store in the network — and
+        I could not explain why.</p>
+        <table class="ds-table">
+          <tr><th>Metric</th><th>DS009</th><th>Network average</th></tr>
+          <tr><td>Avg. delivery time</td><td class="bad">31.69 min</td><td>22.12 min</td></tr>
+          <tr><td>Avg. delay</td><td class="bad">12.03 min</td><td>4.13 min</td></tr>
+          <tr><td>On-time rate</td><td class="bad">6.13%</td><td>~41&ndash;43%</td></tr>
+        </table>
+        <p>
+          I ran a full root-cause investigation across four candidate explanations —
+          <b>peak-hour load, distance to customer, order workload, and picking/packing time</b>
+          — as a chained sequence of SQL queries. <b>All four were ruled out.</b>
+        </p>
+        <p>
+          So I documented DS009 as an unresolved operational anomaly and flagged it for manual,
+          on-the-ground investigation, rather than picking the most plausible-sounding cause and
+          presenting it as an answer. A flagged unknown is more useful to a business than a
+          confident wrong one.
+        </p>
+      </div>
+
+      <div class="shots">
+        <figure>
+          <img src="assets/qc-health-check.webp" width="1015" height="691" loading="lazy"
+               alt="Power BI dashboard page showing quick-commerce order volume, revenue, delivery speed and product availability">
+          <figcaption><b>Page 1 — The Health Check.</b> Order volume, revenue, delivery speed,
+          product availability, and which dark stores carry the most revenue at risk.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/qc-leakage-map.webp" width="1008" height="691" loading="lazy"
+               alt="Power BI dashboard page mapping zero-result searches, late deliveries and cancelled orders by area">
+          <figcaption><b>Page 2 — The Leakage Map.</b> Where demand is lost: zero-result
+          searches, late deliveries, cancelled orders by area, and the categories worst hit by
+          inventory gaps.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/qc-action-center.webp" width="1003" height="684" loading="lazy"
+               alt="Power BI dashboard page showing refund amounts, resolution times and peak-hour delay spikes">
+          <figcaption><b>Page 3 — The Action Center.</b> Diagnosis turned into action: refund
+          amounts, resolution times, peak-hour delay spikes by store, and specific resolution
+          actions by ticket.</figcaption>
+        </figure>
+      </div>
+
+      <div class="feat-foot">
+        <a class="btn btn-sec" href="https://github.com/chaits1412/Quick-commerce-analytics" target="_blank" rel="noopener">
+          Read the full analysis and all 26 queries on GitHub &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-label">More work</p>
+      <h2>Forecasting, dashboards &amp; modelling</h2>
+      <p class="sec-sub">Four smaller, self-contained projects across time series forecasting,
+      business intelligence and predictive modelling.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-body">
+          <h3>ETH-USD Time Series Forecasting</h3>
+          <p>Benchmarked four forecasting approaches on five years of daily Ethereum price data,
+          evaluated by RMSE on a held-out test set. <b>LSTM won decisively</b> — roughly 7.6&times;
+          lower error than the next best model.</p>
+          <table class="rmse">
+            <tr class="win"><td>LSTM</td><td>135.82</td></tr>
+            <tr><td>SARIMA</td><td>1031.44</td></tr>
+            <tr><td>Holt's Winter</td><td>1040.08</td></tr>
+            <tr><td>Prophet</td><td>1594.13</td></tr>
+          </table>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">statsmodels</span>
+            <span class="chip">TensorFlow</span><span class="chip">Prophet</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img">
+          <img src="assets/pp-project-overview.webp" width="1501" height="1056" loading="lazy"
+               alt="Power BI dashboard tracking project status, complexity, cost versus benefit and cost overrun">
+        </div>
+        <div class="card-body">
+          <h3>Project Performance &amp; Employee Utilization</h3>
+          <p>A Power BI dashboard tracking project health, cost overruns and employee
+          utilization — rebuilt independently from public data to recreate the
+          <b>internship reporting I did for audit engagements</b>, using custom DAX for
+          estimated cost and utilization banding.</p>
+          <div class="chips">
+            <span class="chip">Power BI</span><span class="chip">DAX</span>
+            <span class="chip">Data modelling</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img">
+          <img src="assets/bank-churn.webp" width="1600" height="620" loading="lazy"
+               alt="Tableau dashboard analysing bank customer churn by country, product count and credit score">
+        </div>
+        <div class="card-body">
+          <h3>Bank Customer Churn Analysis</h3>
+          <p>Churn across <b>10,000 customers in 3 countries</b>. Germany showed nearly double
+          Spain's share of exits, and customers holding <b>4 products churned at close to
+          100%</b> — suggesting over-selling correlates with dissatisfaction rather than
+          loyalty.</p>
+          <div class="chips">
+            <span class="chip">Tableau</span><span class="chip">Python</span>
+            <span class="chip">Random Forest</span><span class="chip">XGBoost</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-img">
+          <img src="assets/movie-trends.webp" width="1600" height="608" loading="lazy"
+               alt="Power BI dashboard showing box office revenue trends, genre performance and audience ratings">
+        </div>
+        <div class="card-body">
+          <h3>Cinematic Insights: Movie Trends</h3>
+          <p>A Power BI dashboard on box office revenue, genre performance and audience ratings
+          across two decades, segmenting titles into high and low revenue bands to isolate what
+          separates hits from underperformers.</p>
+          <div class="chips">
+            <span class="chip">Power BI</span><span class="chip">Data modelling</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="toolkit" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-label">Toolkit</p>
+      <h2>What I work with</h2>
+    </div>
+    <div class="tools">
+      <div class="tool">
+        <h4>Query &amp; Language</h4>
+        <ul>
+          <li>Python</li>
+          <li>SQL — BigQuery</li>
+          <li>pandas, NumPy</li>
+        </ul>
+      </div>
+      <div class="tool">
+        <h4>Analysis &amp; Modelling</h4>
+        <ul>
+          <li>statsmodels, pmdarima</li>
+          <li>scikit-learn, XGBoost</li>
+          <li>TensorFlow / Keras, Prophet</li>
+        </ul>
+      </div>
+      <div class="tool">
+        <h4>Visualization</h4>
+        <ul>
+          <li>Power BI — DAX, data modelling</li>
+          <li>Tableau</li>
+          <li>matplotlib</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="sec-label">Contact</p>
+    <h2>Let's talk</h2>
+    <p>I'm always happy to talk about analytics roles, data problems, or anything in the
+    projects above.</p>
+    <div class="cta">
+      <a class="btn btn-pri" href="https://www.linkedin.com/in/chaitali-ranalkar-1410cr" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a class="btn btn-sec" href="https://github.com/chaits1412" target="_blank" rel="noopener">View GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <span>© <span id="yr">2026</span> Chaitali Ranalkar</span>
+    <span class="r">
+      <a href="https://github.com/chaits1412" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/chaitali-ranalkar-1410cr" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button class="lb-x" aria-label="Close">&times;</button>
+  <img id="lb-img" alt="">
+</div>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Click any screenshot to enlarge. Dashboards are detail-heavy and unreadable at card size.
+var lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img');
+document.querySelectorAll('figure img, .card-img img').forEach(function (im) {
+  im.addEventListener('click', function () {
+    lbImg.src = im.src;
+    lbImg.alt = im.alt;
+    lb.classList.add('on');
+    document.body.style.overflow = 'hidden';
+  });
+});
+function closeLb() {
+  lb.classList.remove('on');
+  document.body.style.overflow = '';
+}
+lb.addEventListener('click', closeLb);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeLb();
+});
+</script>
+
+</body>
+</html>

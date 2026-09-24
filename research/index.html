@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chaitali Ranalkar — Research</title>
+<meta name="description" content="Research portfolio of Chaitali Ranalkar. M.Sc. Big Data Analytics, St. Xavier's College Mumbai. Unsupervised learning on behavioural data, clustering under violated assumptions, and interpretable models.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chaitali Ranalkar — Research">
+<meta property="og:description" content="Clustering behavioural data, and what happens when the assumptions behind the method don't hold.">
+<meta property="og:url" content="https://chaits1412.github.io/research/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230A0E14'/><circle cx='32' cy='38' r='11' fill='%23A06CD5'/><circle cx='64' cy='32' r='11' fill='%232BB3A3'/><circle cx='50' cy='68' r='11' fill='%23E8D44D'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script>
+/* Set before first paint so reveal styles only apply when JS can undo them. */
+(function () {
+  var d = document.documentElement;
+  if (!window.matchMedia || !matchMedia('(prefers-reduced-motion: reduce)').matches) d.className += ' js';
+})();
+</script>
+
+<style>
+:root{
+  --bg:#0A0E14;
+  --surface:#10151E;
+  --surface-2:#151C27;
+  --line:#1E2734;
+  --line-2:#273243;
+  --text:#E6EBF2;
+  --muted:#96A2B3;
+  --faint:#5E6B7D;
+  --c1:#A06CD5;   /* viridis purple  — At-Risk      */
+  --c2:#2BB3A3;   /* viridis teal    — Potential    */
+  --c3:#E8D44D;   /* viridis yellow  — Loyal        */
+  --accent:var(--c2);
+  --maxw:1080px;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --serif:'Source Serif 4',Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:16.5px;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+@media(max-width:600px){.wrap{padding:0 20px}}
+a{color:inherit}
+img{max-width:100%}
+
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.018em;margin:0}
+h2{font-size:clamp(1.75rem,4vw,2.5rem);line-height:1.15;margin-bottom:14px}
+h3{font-size:clamp(1.2rem,2.6vw,1.5rem);line-height:1.25;margin-bottom:10px}
+.lede{color:var(--muted);max-width:66ch;margin:0;font-size:1.03rem}
+.label{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--faint);margin:0 0 16px;display:flex;align-items:center;gap:13px;
+}
+.label::after{content:'';flex:1;height:1px;background:var(--line)}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:70;background:rgba(10,14,20,.86);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:10px}
+.nav-name{font-family:var(--serif);font-weight:600;font-size:15.5px;text-decoration:none}
+.nav-links{margin-left:auto;display:flex;gap:24px;font-size:13.5px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;transition:color .18s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cv{border:1px solid var(--line-2);border-radius:999px;padding:6px 15px;color:var(--text)!important}
+.nav-cv:hover{border-color:var(--accent);color:var(--accent)!important}
+@media(max-width:820px){.nav-links a:not(.nav-cv){display:none}}
+
+/* ---------- hero ---------- */
+header{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+#kcanvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.85}
+.hero-fade{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 64% 58% at 24% 48%,rgba(10,14,20,.97) 42%,rgba(10,14,20,.62) 66%,rgba(10,14,20,0) 100%)}
+/* On a narrow screen the point cloud sits behind the copy, so damp it there. */
+@media(max-width:820px){
+  #kcanvas{opacity:.34}
+  .hero-fade{background:linear-gradient(180deg,rgba(10,14,20,.90) 0%,rgba(10,14,20,.74) 55%,rgba(10,14,20,.58) 100%)}
+}
+.hero-in{position:relative;padding:104px 0 88px}
+@media(max-width:700px){.hero-in{padding:74px 0 64px}}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 22px}
+header h1{font-size:clamp(2.7rem,7vw,4.4rem);line-height:1.02;margin-bottom:24px}
+.thesis{font-family:var(--serif);font-size:clamp(1.25rem,2.9vw,1.72rem);line-height:1.4;
+  max-width:24ch;margin:0 0 22px;color:var(--text)}
+.thesis em{font-style:italic;color:var(--c3)}
+.hero-sub{color:var(--muted);max-width:50ch;margin:0 0 30px;font-size:1.02rem}
+.hero-meta{font-family:var(--mono);font-size:12px;color:var(--faint);margin:0 0 30px;letter-spacing:.03em}
+.cta{display:flex;flex-wrap:wrap;gap:11px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 21px;border-radius:8px;
+  text-decoration:none;font-size:14.5px;font-weight:500;transition:all .2s;border:1px solid transparent}
+.btn-pri{background:var(--accent);color:#04211E;font-weight:600}
+.btn-pri:hover{background:#43cdbc;transform:translateY(-2px)}
+.btn-sec{border-color:var(--line-2);color:var(--text);background:rgba(21,28,39,.7)}
+.btn-sec:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* legend under hero */
+.legend{position:relative;display:flex;flex-wrap:wrap;gap:20px;margin-top:34px;
+  padding-top:20px;border-top:1px solid var(--line)}
+.lg{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11.5px;color:var(--faint)}
+.lg i{width:9px;height:9px;border-radius:50%;display:block}
+
+/* ---------- sections ---------- */
+section{padding:88px 0}
+@media(max-width:700px){section{padding:64px 0}}
+.rule{border-top:1px solid var(--line)}
+
+/* statement */
+.stmt{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}
+@media(max-width:880px){.stmt{grid-template-columns:1fr;gap:24px}}
+.stmt p{color:var(--muted);margin:0 0 18px;font-size:1.05rem}
+.stmt p:last-child{margin-bottom:0}
+.stmt b{color:var(--text);font-weight:600}
+.pull{font-family:var(--serif);font-size:1.28rem;line-height:1.45;color:var(--text);
+  border-left:2px solid var(--c3);padding-left:22px;margin:26px 0 0;font-style:italic}
+
+/* ---------- paper-style study ---------- */
+.study{border:1px solid var(--line);border-radius:14px;background:var(--surface);
+  overflow:hidden;margin-bottom:30px}
+.study-head{padding:32px 34px 26px;border-bottom:1px solid var(--line)}
+@media(max-width:700px){.study-head{padding:24px 20px 20px}}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 10px;border-radius:4px;border:1px solid var(--line-2);color:var(--muted)}
+.tag-hl{color:var(--c3);border-color:rgba(232,212,77,.32);background:rgba(232,212,77,.07)}
+.study-head h3{margin-bottom:8px}
+.byline{font-size:.88rem;color:var(--faint);margin:0 0 16px;font-family:var(--mono)}
+.q{display:flex;gap:14px;align-items:flex-start;background:var(--surface-2);
+  border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:8px;padding:16px 18px}
+.q-l{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);flex:none;margin-top:4px}
+.q p{margin:0;font-family:var(--serif);font-size:1.07rem;line-height:1.5;color:var(--text)}
+
+.body{padding:28px 34px}
+@media(max-width:700px){.body{padding:22px 20px}}
+.body p{color:var(--muted);margin:0 0 16px}
+.body p:last-child{margin-bottom:0}
+.body b{color:var(--text);font-weight:600}
+.sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--faint);margin:26px 0 12px}
+.sub:first-child{margin-top:0}
+
+/* pipeline */
+.pipe{display:flex;flex-wrap:wrap;gap:7px;align-items:center;font-family:var(--mono);font-size:11.5px;margin:0 0 6px}
+.pipe span{background:var(--surface-2);border:1px solid var(--line-2);padding:6px 11px;border-radius:5px;color:var(--muted)}
+.pipe i{color:var(--faint);font-style:normal}
+
+/* figures */
+.figs{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:6px 0 0}
+@media(max-width:760px){.figs{grid-template-columns:1fr}}
+figure{margin:0}
+figure img{width:100%;height:auto;display:block;border-radius:9px;border:1px solid var(--line-2);
+  background:#fff;cursor:zoom-in;transition:border-color .2s}
+figure img:hover{border-color:var(--accent)}
+figcaption{font-size:.83rem;color:var(--faint);margin-top:10px;line-height:1.55}
+figcaption b{color:var(--muted);font-weight:600}
+
+/* results table */
+.tbl{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums;margin:4px 0 0}
+.tbl th,.tbl td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);font-weight:500}
+.tbl td{color:var(--muted)}
+.tbl td:first-child{color:var(--text)}
+.tbl td:not(:first-child){font-family:var(--mono);font-size:.85rem}
+.tbl tr.best td{color:var(--c3)}
+.tbl tr.best td:first-child{font-weight:600}
+.tbl tr:last-child td{border-bottom:none}
+@media(max-width:620px){.tbl th,.tbl td{padding:8px 7px;font-size:.8rem}}
+/* The results table has six columns; below ~620px it must scroll on its own
+   rather than be clipped by the page's overflow-x:hidden. */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:4px 0 0}
+.tbl-wrap .tbl{min-width:520px;margin:0}
+.tbl-hint{display:none;font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--faint);margin:9px 0 0}
+@media(max-width:620px){.tbl-hint{display:block}}
+
+/* limitations — the part that matters */
+.limits{background:rgba(160,108,213,.05);border:1px solid rgba(160,108,213,.22);
+  border-radius:10px;padding:22px 24px;margin-top:24px}
+@media(max-width:700px){.limits{padding:18px}}
+.limits .lh{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--c1);margin:0 0 14px}
+.limits ul{margin:0;padding:0;list-style:none}
+.limits li{position:relative;padding-left:20px;margin-bottom:11px;color:var(--muted);font-size:.96rem}
+.limits li:last-child{margin-bottom:0}
+.limits li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:1.5px;background:var(--c1)}
+.limits li b{color:var(--text);font-weight:600}
+
+/* next steps */
+.next{border-top:1px solid var(--line);padding:22px 34px 28px;background:var(--surface-2)}
+@media(max-width:700px){.next{padding:18px 20px 22px}}
+.next .nh{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--c2);margin:0 0 12px}
+.next p{margin:0;color:var(--muted);font-size:.96rem}
+.next b{color:var(--text);font-weight:600}
+
+/* ---------- interests ---------- */
+.ints{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.ints{grid-template-columns:1fr}}
+.int{border:1px solid var(--line);border-radius:12px;padding:26px 24px;background:var(--surface);
+  transition:transform .22s,border-color .22s;position:relative;overflow:hidden}
+.int:hover{transform:translateY(-3px)}
+.int::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.int:nth-child(1)::before{background:var(--c1)}
+.int:nth-child(2)::before{background:var(--c2)}
+.int:nth-child(3)::before{background:var(--c3)}
+.int h3{font-size:1.1rem;margin-bottom:11px}
+.int p{color:var(--muted);font-size:.95rem;margin:0 0 14px}
+.int p:last-child{margin-bottom:0}
+.int .from{font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.06em;
+  border-top:1px solid var(--line);padding-top:12px;margin-top:4px;display:block}
+.int b{color:var(--text);font-weight:600}
+
+/* ---------- foundation ---------- */
+.found{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+@media(max-width:860px){.found{grid-template-columns:1fr;gap:30px}}
+.deg{padding:18px 0;border-bottom:1px solid var(--line)}
+.deg:last-child{border-bottom:none}
+.deg-top{display:flex;justify-content:space-between;gap:14px;align-items:baseline;flex-wrap:wrap}
+.deg h3{font-size:1.06rem;margin:0 0 4px}
+.deg .inst{color:var(--muted);font-size:.92rem;margin:0}
+.deg .when{font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap}
+.cg{display:inline-flex;align-items:baseline;gap:6px;margin-top:10px;
+  background:rgba(43,179,163,.09);border:1px solid rgba(43,179,163,.24);border-radius:6px;padding:4px 10px}
+.cg .g{font-family:var(--mono);font-size:.86rem;color:var(--c2);font-weight:500}
+.cg .gl{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.09em;text-transform:uppercase}
+.skl{margin:0 0 16px}
+.skl h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 8px;font-weight:500}
+.skl p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* ---------- contact ---------- */
+.contact{border-top:1px solid var(--line);background:var(--surface)}
+.ccards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 28px}
+@media(max-width:820px){.ccards{grid-template-columns:1fr}}
+.ccard{display:flex;gap:13px;align-items:center;background:var(--surface-2);
+  border:1px solid var(--line);border-radius:10px;padding:17px 18px;text-decoration:none;transition:all .2s}
+.ccard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.ccard .cl{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);display:block;margin-bottom:2px}
+.ccard .cv{font-size:.92rem;word-break:break-word}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:13px;color:var(--faint)}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;flex-wrap:wrap;gap:14px}
+.foot-in .r{margin-left:auto;display:flex;gap:18px}
+.foot-in a{color:var(--faint);text-decoration:none}
+.foot-in a:hover{color:var(--accent)}
+
+/* ---------- reveal + lightbox ---------- */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(5,8,12,.96);display:none;
+  align-items:center;justify-content:center;padding:26px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:8px;background:#fff}
+.lb-x{position:absolute;top:18px;right:24px;color:var(--muted);font-size:30px;
+  background:none;border:none;cursor:pointer;line-height:1}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="#top" class="nav-name">Chaitali Ranalkar</a>
+    <div class="nav-links">
+      <a href="#statement">Statement</a>
+      <a href="#research">Research</a>
+      <a href="#interests">Interests</a>
+      <a href="#foundation">Background</a>
+      <a href="/" title="Applied / industry portfolio">Applied&nbsp;work</a>
+      <a href="../Chaitali-Ranalkar-Resume.pdf" class="nav-cv" download>CV ↓</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <canvas id="kcanvas" aria-hidden="true"></canvas>
+  <div class="hero-fade"></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <p class="eyebrow">Research Portfolio</p>
+      <h1>Chaitali Ranalkar</h1>
+      <p class="thesis">Every clustering method assumes a shape.
+        I'm interested in <em>what happens when the data isn't that shape.</em></p>
+      <p class="hero-sub">
+        M.Sc. Big Data Analytics with a mathematics background. My research work so far sits in
+        unsupervised learning on behavioural data — and in being honest about where the method
+        stops being trustworthy.
+      </p>
+      <p class="hero-meta">St. Xavier's College, Mumbai (Autonomous) &nbsp;·&nbsp; B.Sc. Mathematics
+        &nbsp;·&nbsp; Applying for PhD admission</p>
+      <div class="cta">
+        <a class="btn btn-pri" href="#research">Read the research ↓</a>
+        <a class="btn btn-sec" href="../Chaitali-Ranalkar-Resume.pdf" download>Download CV</a>
+      </div>
+
+      <div class="legend">
+        <span class="lg"><i style="background:var(--c1)"></i> At-risk</span>
+        <span class="lg"><i style="background:var(--c2)"></i> Potential loyalists</span>
+        <span class="lg"><i style="background:var(--c3)"></i> Loyal</span>
+        <span class="lg" style="color:var(--faint)">— the three segments K-means recovered in my thesis.
+          The background is running that algorithm now.</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="statement">
+  <div class="wrap">
+    <div class="stmt rv">
+      <div>
+        <p class="label">Research statement</p>
+        <h2>Where the method<br>breaks down.</h2>
+      </div>
+      <div>
+        <p>
+          My M.Sc. research segmented retail customers by combining <b>RFM features with K-means
+          clustering</b>. It worked — three interpretable segments, a clean elbow, a defensible
+          story. But the interesting part came afterwards, when I looked at what the method had
+          quietly assumed: that clusters are roughly spherical, comparable in variance, and
+          separable by Euclidean distance in a log-transformed space.
+        </p>
+        <p>
+          Behavioural data is not obliging about any of that. Spend distributions are heavy-tailed,
+          a handful of high-monetary customers drag centroids around, and the boundary between
+          "occasional" and "lapsing" is genuinely continuous rather than a partition. K-means
+          returns an answer regardless. <b>The question I keep coming back to is how to tell the
+          difference between a segmentation that reflects structure and one the algorithm imposed.</b>
+        </p>
+        <p>
+          That interest pulls in two directions I would like to pursue formally: <b>density- and
+          model-based alternatives</b> that admit outliers and soft membership, and
+          <b>interpretability</b> — because a segmentation nobody can explain is not a finding,
+          it is a colour chart.
+        </p>
+        <p class="pull">
+          An honest unknown is worth more than a confident wrong answer. I would rather
+          characterise uncertainty than decorate over it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="rule">
+  <div class="wrap">
+    <p class="label rv">Research</p>
+    <h2 class="rv">Two studies, in full</h2>
+    <p class="lede rv" style="margin-bottom:42px">
+      Presented the way I would want to read them: the question first, the method as actually run,
+      the results as they came out, and an honest account of what the work does not establish.
+    </p>
+
+    <!-- ============ STUDY 1 ============ -->
+    <article class="study rv">
+      <div class="study-head">
+        <div class="tags">
+          <span class="tag tag-hl">M.Sc. Research Project</span>
+          <span class="tag">Unsupervised learning</span>
+          <span class="tag">2024–25</span>
+        </div>
+        <h3>Customer Segmentation using the RFM Model and K-Means</h3>
+        <p class="byline">Department of Information Technology, St. Xavier's College, Mumbai
+          (Autonomous) · with Sejal Gawade · submitted toward the M.Sc. Big Data Analytics</p>
+        <div class="q">
+          <span class="q-l">Question</span>
+          <p>Can raw transaction records be reduced to a customer segmentation that is both
+            statistically defensible and specific enough to act on?</p>
+        </div>
+      </div>
+
+      <div class="body">
+        <p class="sub">Method, as run</p>
+        <div class="pipe">
+          <span>Transaction log</span><i>→</i>
+          <span>Aggregate per customer</span><i>→</i>
+          <span>RFM features</span><i>→</i>
+          <span>Log transform</span><i>→</i>
+          <span>Min–Max scaling</span><i>→</i>
+          <span>K-means</span><i>→</i>
+          <span>Elbow selection</span>
+        </div>
+        <p style="margin-top:16px">
+          Transactions were aggregated per <span style="font-family:var(--mono);font-size:.9em">CustomerID</span>
+          into three features — <b>Recency</b> (days since last purchase), <b>Frequency</b> (transaction
+          count) and <b>Monetary</b> (total spend). The analysis was restricted to UK customers, who
+          dominate the dataset; that reduces noise from thinly-represented regions, at the cost of
+          generalisability. A <b>log transform</b> addressed the heavy right skew typical of
+          transactional spend, and Min–Max scaling prevented Monetary from dominating the distance
+          metric purely through its units.
+        </p>
+        <p>
+          I ran <b>two segmentations deliberately</b>. The first was a rule-based RFM quintile score
+          — each customer scored 1–5 on each dimension, concatenated into codes like
+          <span style="font-family:var(--mono);font-size:.9em">555</span> (Top Customers) or
+          <span style="font-family:var(--mono);font-size:.9em">111</span> (Lost). The second was
+          K-means on the transformed features. The first is interpretable by construction; the second
+          is learned. Reading them against each other is what made the limitations visible.
+        </p>
+
+        <p class="sub">Results</p>
+        <div class="figs">
+          <figure>
+            <img src="figs/elbow.webp" width="589" height="455" loading="lazy"
+                 alt="Elbow plot of within-cluster sum of squares against number of clusters, bending at K=3">
+            <figcaption><b>Elbow selection.</b> Inertia (WCSS) against K. The bend sits at
+              <b>K = 3</b>; beyond it, additional clusters buy progressively little.</figcaption>
+          </figure>
+          <figure>
+            <img src="figs/clusters-3d.webp" width="746" height="666" loading="lazy"
+                 alt="3D scatter plot of customers in log-Recency, log-Frequency, log-Monetary space coloured by three K-means clusters">
+            <figcaption><b>The recovered segments</b> in log-RFM space — at-risk (purple),
+              potential loyalists (teal), loyal (yellow).</figcaption>
+          </figure>
+        </div>
+        <p style="margin-top:22px">
+          Three segments emerged and were readable without straining: <b>at-risk</b> customers
+          (infrequent, low-spend, long since seen), <b>potential loyalists</b> (moderate on every
+          dimension), and <b>loyal</b> customers (frequent, high-spend, recent). The rule-based RFM
+          codes broadly agreed at the extremes — top and lost customers landed where you would
+          expect — and disagreed in the middle, which is the part worth paying attention to.
+        </p>
+
+        <div class="limits">
+          <p class="lh">What this does not establish</p>
+          <ul>
+            <li><b>The elbow is a heuristic, not a criterion.</b> K = 3 is where the curve bends,
+              not where a statistic says the partition is best. No silhouette analysis or gap
+              statistic was computed, so cluster validity is argued visually rather than measured.</li>
+            <li><b>K-means assumes what the data does not supply.</b> It seeks roughly spherical,
+              similar-variance clusters under Euclidean distance. Log-RFM space is neither
+              isotropic nor cleanly separable — the boundary the plot shows is partly an artefact
+              of forcing a hard partition onto a continuum.</li>
+            <li><b>Outliers pull centroids.</b> A small number of very high-Monetary customers
+              exert influence far out of proportion to their count, and K-means has no mechanism
+              to set them aside.</li>
+            <li><b>Restricting to the UK trades noise for scope.</b> It sharpens the analysis and
+              narrows what can be claimed from it.</li>
+            <li><b>Agreement between the two segmentations is not validation.</b> Both are built
+              from the same three features; they share their blind spots.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="next">
+        <p class="nh">Where I would take it</p>
+        <p>
+          The obvious next step is to stop assuming a hard partition. <b>Gaussian mixture models</b>
+          would give soft membership and let the middle of the distribution stay ambiguous instead
+          of being adjudicated; <b>DBSCAN</b> would allow density-defined segments and, importantly,
+          permit points to belong to nothing at all; <b>hierarchical clustering</b> would expose
+          whether the three-way split is stable or an accident of K. Beyond method, the features
+          themselves are thin — three aggregates discard the entire temporal structure of a purchase
+          history, and I suspect sequence matters more than the RFM framing allows.
+        </p>
+      </div>
+    </article>
+
+    <!-- ============ STUDY 2 ============ -->
+    <article class="study rv">
+      <div class="study-head">
+        <div class="tags">
+          <span class="tag tag-hl">M.Sc. Coursework Project</span>
+          <span class="tag">Supervised learning</span>
+          <span class="tag">2024</span>
+        </div>
+        <h3>Predicting Customer Churn: a comparison of five classifiers</h3>
+        <p class="byline">M.Sc. Big Data Analytics · 10,000 bank customers, 14 raw attributes</p>
+        <div class="q">
+          <span class="q-l">Question</span>
+          <p>Which model family actually earns its complexity on tabular behavioural data — and
+            what drives the prediction once you look inside?</p>
+        </div>
+      </div>
+
+      <div class="body">
+        <p class="sub">Method, as run</p>
+        <p>
+          Categorical attributes were one-hot encoded (Geography) or binarised (Gender), and
+          identifier columns dropped. Because several numeric features were visibly skewed, I
+          examined <b>log, square-root, Box–Cox and Yeo–Johnson transforms</b> before settling the
+          feature set. Five classifiers were then trained and evaluated on a held-out split:
+          logistic regression as a baseline, then decision tree, gradient boosting, random forest
+          and XGBoost. The random forest was tuned with <b>randomised search over a 5-fold
+          cross-validated grid</b>.
+        </p>
+
+        <p class="sub">Results</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>ROC-AUC</th></tr>
+          <tr><td>Logistic regression</td><td>75.67%</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Gradient boosting</td><td>84.13%</td><td>0.834</td><td>0.715</td><td>0.770</td><td>—</td></tr>
+          <tr><td>XGBoost</td><td>86.61%</td><td>0.836</td><td>0.793</td><td>0.814</td><td>0.9322</td></tr>
+          <tr><td>Random forest</td><td>87.98%</td><td>0.857</td><td>0.809</td><td>0.832</td><td>0.9396</td></tr>
+          <tr class="best"><td>Random forest, tuned</td><td>88.06%</td><td>0.859</td><td>0.809</td><td>0.833</td><td>—</td></tr>
+        </table></div>
+        <p class="tbl-hint">Scroll the table sideways →</p>
+
+        <div class="figs" style="margin-top:26px">
+          <figure>
+            <img src="figs/roc-rf.webp" width="567" height="457" loading="lazy"
+                 alt="ROC curve for the random forest classifier with area under curve 0.9396">
+            <figcaption><b>Random forest ROC</b>, AUC 0.9396 — the strongest separation of the five.</figcaption>
+          </figure>
+          <figure>
+            <img src="figs/feature-importance.webp" width="972" height="547" loading="lazy"
+                 alt="Horizontal bar chart of random forest feature importances, Age highest at 0.28">
+            <figcaption><b>Feature importance.</b> <b>Age</b> dominates at ≈0.28 — roughly double
+              the next feature — followed by number of products, balance and salary.</figcaption>
+          </figure>
+        </div>
+
+        <p style="margin-top:22px">
+          Two things are worth drawing out. First, <b>Age carries more signal than every financial
+          attribute</b>, which reframes churn here as a life-stage phenomenon rather than a purely
+          economic one. Second, the tree ensembles separate the classes well — AUC above 0.93 — while
+          logistic regression lands twelve points lower on accuracy, suggesting the decision boundary
+          is genuinely non-linear rather than merely noisy.
+        </p>
+
+        <div class="limits">
+          <p class="lh">What this does not establish</p>
+          <ul>
+            <li><b>Tuning bought essentially nothing.</b> Randomised search moved accuracy from
+              87.98% to 88.06% — eight hundredths of a percentage point, well inside run-to-run
+              variance. Reported honestly, this is a null result, not an improvement.</li>
+            <li><b>The classes are imbalanced, so accuracy flatters every model.</b> Churners are
+              roughly a fifth of the sample; a model predicting "stays" for everyone would score
+              near 80%. Recall and AUC are the numbers that carry information here, and recall
+              tops out at 0.81 — around one churner in five is still missed.</li>
+            <li><b>Impurity-based importance is biased</b> toward high-cardinality and continuous
+              features. Age is continuous and Gender is binary, so the gap between them is partly
+              an artefact of the measure. Permutation importance or SHAP would be the honest test,
+              and I did not run either.</li>
+            <li><b>No calibration was assessed.</b> The scores rank well, which is what AUC
+              measures, but nothing here shows the predicted probabilities mean what they say —
+              and any cost-sensitive threshold would depend on exactly that.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="next">
+        <p class="nh">Where I would take it</p>
+        <p>
+          I would replace impurity importance with <b>permutation and SHAP</b> analysis, assess
+          <b>probability calibration</b> before trusting any threshold, and treat the imbalance
+          directly — cost-sensitive learning or resampling — rather than reporting accuracy over
+          it. The more interesting question underneath is whether the Age effect is a genuine
+          life-stage signal or a proxy for something unmeasured, which needs data this dataset
+          does not contain.
+        </p>
+      </div>
+    </article>
+
+    <!-- ============ STUDY 3 ============ -->
+    <article class="study rv">
+      <div class="study-head">
+        <div class="tags">
+          <span class="tag">Independent investigation</span>
+          <span class="tag">2026</span>
+        </div>
+        <h3>A negative result I chose to publish</h3>
+        <div class="q">
+          <span class="q-l">Question</span>
+          <p>One fulfilment centre ran three times slower than every other in the network.
+            Why?</p>
+        </div>
+      </div>
+      <div class="body">
+        <p>
+          In an independent diagnostic project over a simulated 150,000-search quick-commerce
+          dataset, one dark store — <b>DS009</b> — showed a 6.13% on-time delivery rate against a
+          network average near 42%. I tested four explanations as a chained sequence of SQL
+          queries: <b>peak-hour load, delivery distance, order workload, and picking-and-packing
+          time</b>.
+        </p>
+        <p>
+          <b>All four were ruled out.</b> No remaining variable in the dataset accounted for the
+          gap. I wrote it up as an unresolved operational anomaly flagged for on-site investigation,
+          rather than selecting the most plausible-sounding cause and presenting it as a finding.
+        </p>
+        <p>
+          I include this because it is the closest thing in my applied work to a research instinct:
+          the analysis that matters is often the one that refuses to conclude. The full investigation,
+          with all 26 documented queries, is on GitHub.
+        </p>
+        <div class="cta" style="margin-top:20px">
+          <a class="btn btn-sec" href="https://github.com/chaits1412/Quick-commerce-analytics"
+             target="_blank" rel="noopener">Read the investigation →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="interests" class="rule">
+  <div class="wrap">
+    <p class="label rv">Direction</p>
+    <h2 class="rv">What I want to work on</h2>
+    <p class="lede rv" style="margin-bottom:40px">
+      Three threads, each one traceable to a specific limitation I ran into rather than a topic
+      I found attractive from the outside.
+    </p>
+    <div class="ints">
+      <div class="int rv">
+        <h3>Clustering under violated assumptions</h3>
+        <p>
+          Density-based and mixture models for behavioural data that is heavy-tailed, continuous at
+          the boundaries, and full of legitimate outliers. <b>When should a method be permitted to
+          assign nothing at all?</b>
+        </p>
+        <span class="from">Came from: K-means forcing a hard partition on log-RFM space</span>
+      </div>
+      <div class="int rv">
+        <h3>Interpretability that survives scrutiny</h3>
+        <p>
+          Feature attribution that holds up under the biases of the measure itself — permutation
+          and SHAP over impurity — and <b>calibration, so a predicted probability means what it
+          claims.</b>
+        </p>
+        <span class="from">Came from: Age dominating an importance ranking I could not fully trust</span>
+      </div>
+      <div class="int rv">
+        <h3>Learning where the data cannot leave</h3>
+        <p>
+          I build audit tooling that must run entirely on-premises, because the documents are not
+          permitted to leave the building. That constraint — <b>useful models under strict data
+          locality</b> — is one I find genuinely interesting rather than merely inconvenient.
+        </p>
+        <span class="from">Came from: building an on-premises NLP summarisation tool at work</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="foundation" class="rule">
+  <div class="wrap">
+    <div class="found">
+      <div class="rv">
+        <p class="label">Background</p>
+        <div class="deg">
+          <div class="deg-top">
+            <div>
+              <h3>M.Sc. Big Data Analytics</h3>
+              <p class="inst">St. Xavier's College, Mumbai (Autonomous)</p>
+            </div>
+            <span class="when">Aug 2023 — Jun 2025</span>
+          </div>
+          <span class="cg"><span class="g">9.35 / 10</span><span class="gl">CGPA</span></span>
+        </div>
+        <div class="deg">
+          <div class="deg-top">
+            <div>
+              <h3>B.Sc. Mathematics</h3>
+              <p class="inst">B. N. Bandodkar College</p>
+            </div>
+            <span class="when">Jun 2020 — Jun 2023</span>
+          </div>
+          <span class="cg"><span class="g">9.25 / 10</span><span class="gl">CGPA</span></span>
+        </div>
+        <p style="color:var(--muted);font-size:.95rem;margin-top:20px">
+          The mathematics degree is the part I lean on most. Linear algebra is what makes a distance
+          metric a choice rather than a default, and probability is what stops a cluster boundary
+          from looking like a fact.
+        </p>
+      </div>
+
+      <div class="rv">
+        <p class="label">Technical</p>
+        <div class="skl">
+          <h4>Machine learning</h4>
+          <p>scikit-learn, XGBoost, TensorFlow / Keras, statsmodels, Prophet — clustering,
+            classification, ensemble methods, time-series forecasting, hyperparameter search
+            with cross-validation</p>
+        </div>
+        <div class="skl">
+          <h4>Languages &amp; data</h4>
+          <p>Python (pandas, NumPy, SciPy), R, SQL including BigQuery, query optimisation,
+            database design</p>
+        </div>
+        <div class="skl">
+          <h4>Applied &amp; professional</h4>
+          <p>Python automation, Streamlit, on-premises NLP pipelines, Power BI with DAX and
+            row-level security, CaseWare IDEA, ITGC and ITAC controls</p>
+        </div>
+        <div class="skl">
+          <h4>Also</h4>
+          <p>Generative AI SQL Database Specialist with ChatGPT — Vanderbilt University
+            (Coursera), 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <p class="label">Contact</p>
+    <h2>Get in touch</h2>
+    <p class="lede">
+      I'm happy to discuss any of the work above, share the full project reports, or talk about
+      research directions.
+    </p>
+    <div class="ccards">
+      <a class="ccard" href="mailto:chaits1412@gmail.com">
+        <span><span class="cl">Email</span><span class="cv">chaits1412@gmail.com</span></span>
+      </a>
+      <a class="ccard" href="https://www.linkedin.com/in/chaitali-ranalkar-1410cr" target="_blank" rel="noopener">
+        <span><span class="cl">LinkedIn</span><span class="cv">chaitali-ranalkar</span></span>
+      </a>
+      <a class="ccard" href="https://github.com/chaits1412" target="_blank" rel="noopener">
+        <span><span class="cl">GitHub</span><span class="cv">github.com/chaits1412</span></span>
+      </a>
+    </div>
+    <div class="cta">
+      <a class="btn btn-pri" href="../Chaitali-Ranalkar-Resume.pdf" download>Download CV ↓</a>
+      <a class="btn btn-sec" href="/">Applied portfolio →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <span>© <span id="yr">2026</span> Chaitali Ranalkar</span>
+    <span class="r">
+      <a href="/">Applied work</a>
+      <a href="https://github.com/chaits1412" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Enlarged figure">
+  <button class="lb-x" aria-label="Close">&times;</button>
+  <img id="lb-img" alt="">
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---------- hero: live K-means, the method from the thesis ---------- */
+  var cv = document.getElementById('kcanvas');
+  var ctx = cv.getContext('2d');
+  var COLORS = ['#A06CD5', '#2BB3A3', '#E8D44D'];
+  var pts = [], cents = [], dpr = 1, W = 0, H = 0, iter = 0, settled = false;
+
+  function gauss() {  // Box-Muller
+    var u = 1 - Math.random(), v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  function seed() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    // three blobs, positioned to sit mostly to the right of the headline
+    var blobs = [
+      { x: W * 0.60, y: H * 0.30, s: Math.min(W, H) * 0.082 },
+      { x: W * 0.83, y: H * 0.55, s: Math.min(W, H) * 0.092 },
+      { x: W * 0.62, y: H * 0.80, s: Math.min(W, H) * 0.078 }
+    ];
+    var n = W < 700 ? 170 : 380;
+    pts = [];
+    for (var i = 0; i < n; i++) {
+      var b = blobs[i % 3];
+      pts.push({ x: b.x + gauss() * b.s, y: b.y + gauss() * b.s, c: -1, r: 2.3 + Math.random() * 2.1 });
+    }
+    // deliberately poor initial centroids, so the convergence is visible
+    cents = [];
+    for (var k = 0; k < 3; k++) {
+      cents.push({ x: W * (0.45 + Math.random() * 0.45), y: H * (0.2 + Math.random() * 0.6), tx: 0, ty: 0 });
+    }
+    iter = 0; settled = false;
+  }
+
+  function assign() {
+    for (var i = 0; i < pts.length; i++) {
+      var best = 0, bd = Infinity;
+      for (var k = 0; k < 3; k++) {
+        var dx = pts[i].x - cents[k].x, dy = pts[i].y - cents[k].y;
+        var d = dx * dx + dy * dy;
+        if (d < bd) { bd = d; best = k; }
+      }
+      pts[i].c = best;
+    }
+  }
+
+  function recompute() {
+    var moved = 0;
+    for (var k = 0; k < 3; k++) {
+      var sx = 0, sy = 0, n = 0;
+      for (var i = 0; i < pts.length; i++) {
+        if (pts[i].c === k) { sx += pts[i].x; sy += pts[i].y; n++; }
+      }
+      if (n) {
+        cents[k].tx = sx / n; cents[k].ty = sy / n;
+        moved += Math.abs(cents[k].tx - cents[k].x) + Math.abs(cents[k].ty - cents[k].y);
+      } else { cents[k].tx = cents[k].x; cents[k].ty = cents[k].y; }
+    }
+    if (moved < 0.6) settled = true;
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < pts.length; i++) {
+      var p = pts[i];
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.c < 0 ? 'rgba(148,162,179,.42)' : COLORS[p.c];
+      ctx.globalAlpha = p.c < 0 ? .8 : .92;
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    if (!settled) {
+      for (var k = 0; k < 3; k++) {
+        ctx.beginPath();
+        ctx.arc(cents[k].x, cents[k].y, 7, 0, Math.PI * 2);
+        ctx.strokeStyle = COLORS[k]; ctx.lineWidth = 2.5; ctx.stroke();
+      }
+    }
+  }
+
+  var last = 0, STEP = 1100;
+  function frame(ts) {
+    if (!last) last = ts;
+    // ease centroids toward their targets every frame
+    for (var k = 0; k < 3; k++) {
+      cents[k].x += (cents[k].tx - cents[k].x) * 0.07;
+      cents[k].y += (cents[k].ty - cents[k].y) * 0.07;
+    }
+    // Advance by elapsed time, not by frame count: a throttled tab (background,
+    // low-power mode) still converges instead of freezing on unassigned points.
+    var guard = 0;
+    while (!settled && ts - last > STEP && guard++ < 4) {
+      assign(); recompute(); iter++; last += STEP;
+      if (iter > 14) settled = true;
+    }
+    draw();
+    if (!settled) requestAnimationFrame(frame);
+  }
+
+  function start() {
+    seed();
+    for (var k = 0; k < 3; k++) { cents[k].tx = cents[k].x; cents[k].ty = cents[k].y; }
+    if (reduce) { assign(); recompute(); assign(); settled = true; draw(); return; }
+    assign();            // never show an uncoloured first frame
+    requestAnimationFrame(frame);
+  }
+
+  if (cv.clientWidth) start();
+  window.addEventListener('load', function () { if (!pts.length) start(); });
+  var rt;
+  window.addEventListener('resize', function () {
+    clearTimeout(rt); rt = setTimeout(start, 220);
+  });
+
+  /* ---------- reveal ---------- */
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+
+  /* ---------- lightbox: figures carry axis labels worth reading ---------- */
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img');
+  document.querySelectorAll('figure img').forEach(function (im) {
+    im.addEventListener('click', function () {
+      lbImg.src = im.currentSrc || im.src; lbImg.alt = im.alt;
+      lb.classList.add('on'); document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLb() { lb.classList.remove('on'); document.body.style.overflow = ''; }
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+})();
+</script>
+
+</body>
+</html>

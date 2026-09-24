@@ -37,17 +37,17 @@ body{margin:0;color:var(--ink);
   font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
   background-color:var(--paper);
   background-image:
-    linear-gradient(rgba(12,10,9,.040) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(12,10,9,.040) 1px,transparent 1px),
-    linear-gradient(rgba(12,10,9,.020) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(12,10,9,.020) 1px,transparent 1px);
+    linear-gradient(rgba(12,10,9,.105) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(12,10,9,.105) 1px,transparent 1px),
+    linear-gradient(rgba(12,10,9,.050) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(12,10,9,.050) 1px,transparent 1px);
   background-size:120px 120px,120px 120px,24px 24px,24px 24px;
   background-position:-1px -1px,-1px -1px,-1px -1px,-1px -1px;
   background-attachment:fixed;
 }
 /* Alternating bands dim the grid rather than hiding it, so the ruling runs
    continuously down the page instead of stopping at every section. */
-.alt{background:rgba(255,255,255,.72)!important;backdrop-filter:saturate(1.02)}
+.alt{background:rgba(255,255,255,.80)!important;backdrop-filter:saturate(1.02)}
 /* Fixed attachment repaints the whole grid on every scroll frame, which stutters
    badly on touch devices; let it scroll with the page there. */
 @media(max-width:900px){
@@ -83,13 +83,15 @@ nav{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.92);
 /* hero */
 header{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
   background:linear-gradient(180deg,#fff 0%,var(--paper) 100%)}
-#kcanvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.95}
-.hero-fade{position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 60% 62% at 20% 46%,rgba(255,255,255,.98) 40%,rgba(255,255,255,.7) 66%,rgba(255,255,255,0) 100%)}
-@media(max-width:860px){#kcanvas{opacity:.42}
-  .hero-fade{background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.82) 55%,rgba(255,255,255,.68))}}
-.hero-in{position:relative;padding:96px 0 84px}
-@media(max-width:700px){.hero-in{padding:64px 0 56px}}
+.hero-in{position:relative;padding:74px 0 66px;display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);gap:44px;align-items:center}
+.hero-art{position:relative}
+.hero-art img{width:100%;height:auto;display:block}
+@media(max-width:940px){
+  .hero-in{grid-template-columns:1fr;gap:26px;padding:56px 0 48px}
+  .hero-art{max-width:520px;opacity:.95}
+}
+@media(max-width:700px){.hero-in{padding:48px 0 40px}}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--c1);background:transparent;
   border:1px solid var(--ink);padding:6px 13px;border-radius:2px;margin:0 0 22px}
@@ -122,7 +124,7 @@ header h1{font-size:clamp(2.6rem,7vw,4.3rem);line-height:1.01;margin-bottom:20px
 section{padding:80px 0;position:relative}
 /* faint point cloud, top-right of each section - a scatter plot dissolving */
 section::before{content:'';position:absolute;top:0;right:0;width:46%;height:220px;
-  pointer-events:none;opacity:.5;
+  pointer-events:none;opacity:.85;
   background-image:
     radial-gradient(circle,rgba(229,64,10,.14) 1.6px,transparent 1.7px),
     radial-gradient(circle,rgba(30,58,138,.10) 1.2px,transparent 1.3px);
@@ -414,10 +416,9 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
 </nav>
 
 <header id="top">
-  <canvas id="kcanvas" aria-hidden="true"></canvas>
-  <div class="hero-fade"></div>
   <div class="wrap">
     <div class="hero-in">
+      <div class="hero-copy">
       <span class="eyebrow"><span class="dot"></span> Research &amp; Projects</span>
       <h1>Chaitali Ranalkar</h1>
       <p class="thesis">Here's how I went from building &lsquo;data dumps&rsquo;
@@ -426,6 +427,10 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
         <a class="btn btn-pri" href="#projects">See the work ↓</a>
         <a class="btn btn-sec" href="#research">Research</a>
         <a class="btn btn-sec" href="../Chaitali-Ranalkar-Resume.pdf" download>CV</a>
+      </div>
+      </div>
+      <div class="hero-art">
+        <img src="figs/hero-analytics.svg" width="660" height="540" alt="" aria-hidden="true">
       </div>
     </div>
   </div>
@@ -1191,108 +1196,6 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
   'use strict';
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.getElementById('yr').textContent = new Date().getFullYear();
-
-  /* ---- hero: K-means, running ---- */
-  var cv = document.getElementById('kcanvas'), ctx = cv.getContext('2d');
-  var COLORS = ['#E5400A', '#1E3A8A', '#B45309'];
-  var pts = [], cents = [], W = 0, H = 0, iter = 0, settled = false;
-  function gauss() {
-    var u = 1 - Math.random(), v = Math.random();
-    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
-  }
-  function seed() {
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = cv.clientWidth; H = cv.clientHeight;
-    if (!W || !H) return false;
-    cv.width = W * dpr; cv.height = H * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    var blobs = [
-      { x: W * 0.62, y: H * 0.28, s: Math.min(W, H) * 0.09 },
-      { x: W * 0.84, y: H * 0.56, s: Math.min(W, H) * 0.1 },
-      { x: W * 0.64, y: H * 0.82, s: Math.min(W, H) * 0.085 }
-    ];
-    var n = W < 700 ? 170 : 380;
-    pts = [];
-    for (var i = 0; i < n; i++) {
-      var b = blobs[i % 3];
-      pts.push({ x: b.x + gauss() * b.s, y: b.y + gauss() * b.s, c: -1, r: 2.3 + Math.random() * 2.1 });
-    }
-    cents = [];
-    for (var k = 0; k < 3; k++) {
-      cents.push({ x: W * (0.45 + Math.random() * 0.45), y: H * (0.2 + Math.random() * 0.6), tx: 0, ty: 0 });
-      cents[k].tx = cents[k].x; cents[k].ty = cents[k].y;
-    }
-    iter = 0; settled = false;
-    return true;
-  }
-  function assign() {
-    for (var i = 0; i < pts.length; i++) {
-      var best = 0, bd = Infinity;
-      for (var k = 0; k < 3; k++) {
-        var dx = pts[i].x - cents[k].x, dy = pts[i].y - cents[k].y, d = dx * dx + dy * dy;
-        if (d < bd) { bd = d; best = k; }
-      }
-      pts[i].c = best;
-    }
-  }
-  function recompute() {
-    var moved = 0;
-    for (var k = 0; k < 3; k++) {
-      var sx = 0, sy = 0, n = 0;
-      for (var i = 0; i < pts.length; i++) if (pts[i].c === k) { sx += pts[i].x; sy += pts[i].y; n++; }
-      if (n) {
-        cents[k].tx = sx / n; cents[k].ty = sy / n;
-        moved += Math.abs(cents[k].tx - cents[k].x) + Math.abs(cents[k].ty - cents[k].y);
-      } else { cents[k].tx = cents[k].x; cents[k].ty = cents[k].y; }
-    }
-    if (moved < 0.6) settled = true;
-  }
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    for (var i = 0; i < pts.length; i++) {
-      var p = pts[i];
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = p.c < 0 ? '#AEB8C6' : COLORS[p.c];
-      ctx.globalAlpha = p.c < 0 ? .5 : .58;
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-    if (!settled) {
-      for (var k = 0; k < 3; k++) {
-        ctx.beginPath(); ctx.arc(cents[k].x, cents[k].y, 7, 0, Math.PI * 2);
-        ctx.strokeStyle = COLORS[k]; ctx.lineWidth = 2.5; ctx.stroke();
-      }
-    }
-  }
-  var last = 0, STEP = 1100;
-  function frame(ts) {
-    if (!last) last = ts;
-    for (var k = 0; k < 3; k++) {
-      cents[k].x += (cents[k].tx - cents[k].x) * 0.07;
-      cents[k].y += (cents[k].ty - cents[k].y) * 0.07;
-    }
-    // Advance by elapsed time, not frame count, so a throttled tab still converges.
-    var guard = 0;
-    while (!settled && ts - last > STEP && guard++ < 4) {
-      assign(); recompute(); iter++; last += STEP;
-      if (iter > 14) settled = true;
-    }
-    draw();
-    if (!settled) requestAnimationFrame(frame);
-  }
-  function start() {
-    if (!seed()) return;
-    if (reduce) { assign(); recompute(); assign(); settled = true; draw(); return; }
-    // Paint one frame synchronously: draw() otherwise only runs inside the rAF
-    // loop, so a tab that never receives a frame would render an empty hero.
-    assign(); draw();
-    last = 0;
-    requestAnimationFrame(frame);
-  }
-  start();
-  window.addEventListener('load', function () { if (!pts.length) start(); });
-  var rt;
-  window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(start, 220); });
 
   /* ---- reveal ---- */
   var io = new IntersectionObserver(function (es) {

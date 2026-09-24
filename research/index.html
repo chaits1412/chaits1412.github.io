@@ -4,33 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chaitali Ranalkar — Research &amp; Projects</title>
-<meta name="description" content="Research and project portfolio of Chaitali Ranalkar. M.Sc. Big Data Analytics, St. Xavier's College Mumbai. Machine learning, databases, generative AI and applied analytics.">
-
+<meta name="description" content="Research and project portfolio of Chaitali Ranalkar. M.Sc. Big Data Analytics. Machine learning, databases, generative AI and applied analytics.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Chaitali Ranalkar — Research &amp; Projects">
 <meta property="og:description" content="How I went from building 'data dumps' to designing actionable data products.">
 <meta property="og:url" content="https://chaits1412.github.io/research/">
 <meta name="twitter:card" content="summary_large_image">
-
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FBFCFD'/><circle cx='33' cy='39' r='12' fill='%236C3FA8'/><circle cx='66' cy='33' r='12' fill='%2312827A'/><circle cx='50' cy='70' r='12' fill='%23B08606'/></svg>">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<script>
-(function(){var d=document.documentElement;
-if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches)d.className+=' js';})();
-</script>
-
+<script>(function(){var d=document.documentElement;
+if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches)d.className+=' js';})();</script>
 <style>
 :root{
   --paper:#FBFCFD; --surface:#FFFFFF; --tint:#F3F7F9;
   --line:#E3E9EF; --line-2:#CED8E2;
   --ink:#12161D; --muted:#566173; --faint:#8792A3;
-  --c1:#6C3FA8; --c2:#12827A; --c3:#B08606; --c4:#2563A8;
-  --accent:var(--c2);
-  --maxw:1100px;
+  --c1:#6C3FA8; --c2:#12827A; --c3:#B08606; --c4:#2563A8; --c5:#C2410C;
+  --accent:var(--c2); --maxw:1100px;
   --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
   --serif:'Source Serif 4',Georgia,serif;
   --shadow:0 1px 2px rgba(18,22,29,.04),0 12px 32px -16px rgba(18,22,29,.16);
@@ -47,11 +39,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;margin:0
 h2{font-size:clamp(1.8rem,4.2vw,2.5rem);line-height:1.13;margin-bottom:12px}
 h3{font-size:clamp(1.15rem,2.5vw,1.4rem);line-height:1.26;margin-bottom:9px}
 .lede{color:var(--muted);max-width:64ch;margin:0;font-size:1.02rem}
+
+/* numbered section label */
 .label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
   color:var(--faint);margin:0 0 14px;display:flex;align-items:center;gap:13px}
 .label::after{content:'';flex:1;height:1px;background:var(--line)}
+.label .num{color:var(--accent);font-weight:500}
 
-/* nav */
 nav{position:sticky;top:0;z-index:70;background:rgba(251,252,253,.92);
   backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:10px}
@@ -69,11 +63,11 @@ header{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
   background:linear-gradient(180deg,#fff 0%,var(--paper) 100%)}
 #kcanvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.95}
 .hero-fade{position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 62% 60% at 22% 46%,rgba(251,252,253,.98) 40%,rgba(251,252,253,.72) 66%,rgba(251,252,253,0) 100%)}
-@media(max-width:860px){#kcanvas{opacity:.5}
-  .hero-fade{background:linear-gradient(180deg,rgba(251,252,253,.93),rgba(251,252,253,.8) 55%,rgba(251,252,253,.66))}}
-.hero-in{position:relative;padding:88px 0 28px}
-@media(max-width:700px){.hero-in{padding:62px 0 22px}}
+  background:radial-gradient(ellipse 60% 62% at 20% 46%,rgba(251,252,253,.98) 40%,rgba(251,252,253,.7) 66%,rgba(251,252,253,0) 100%)}
+@media(max-width:860px){#kcanvas{opacity:.42}
+  .hero-fade{background:linear-gradient(180deg,rgba(251,252,253,.94),rgba(251,252,253,.82) 55%,rgba(251,252,253,.68))}}
+.hero-in{position:relative;padding:96px 0 84px}
+@media(max-width:700px){.hero-in{padding:64px 0 56px}}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--c2);background:rgba(18,130,122,.08);
   border:1px solid rgba(18,130,122,.22);padding:6px 13px;border-radius:999px;margin:0 0 22px}
@@ -83,8 +77,7 @@ header{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
 header h1{font-size:clamp(2.6rem,7vw,4.3rem);line-height:1.01;margin-bottom:20px}
 .thesis{font-family:var(--serif);font-size:clamp(1.2rem,2.7vw,1.6rem);line-height:1.38;max-width:28ch;margin:0 0 18px}
 .thesis em{font-style:italic;color:var(--c1)}
-.hero-sub{color:var(--muted);max-width:52ch;margin:0 0 24px;font-size:1.01rem}
-.hero-meta{font-family:var(--mono);font-size:12px;color:var(--faint);margin:0 0 26px;letter-spacing:.03em}
+.hero-sub{color:var(--muted);max-width:52ch;margin:0 0 28px;font-size:1.01rem}
 .cta{display:flex;flex-wrap:wrap;gap:10px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 21px;border-radius:999px;
   text-decoration:none;font-size:14.5px;font-weight:500;transition:all .2s;border:1px solid transparent}
@@ -92,19 +85,13 @@ header h1{font-size:clamp(2.6rem,7vw,4.3rem);line-height:1.01;margin-bottom:20px
 .btn-pri:hover{background:var(--c2);transform:translateY(-2px)}
 .btn-sec{border-color:var(--line-2);color:var(--ink);background:rgba(255,255,255,.85)}
 .btn-sec:hover{border-color:var(--ink);transform:translateY(-2px)}
-.legend{position:relative;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;
-  margin-top:30px;padding:15px 0 0;border-top:1px solid var(--line)}
-.lg{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
-.lg i{width:10px;height:10px;border-radius:50%;display:block}
-.lg-note{font-family:var(--mono);font-size:11px;color:var(--faint)}
 
-/* stat strip */
 .strip{border-bottom:1px solid var(--line);background:var(--surface)}
-.strip-in{display:grid;grid-template-columns:repeat(4,1fr)}
-@media(max-width:820px){.strip-in{grid-template-columns:repeat(2,1fr)}}
+.strip-in{display:grid;grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.strip-in{grid-template-columns:1fr}}
 .st{padding:26px 24px;border-right:1px solid var(--line)}
 .st:last-child{border-right:none}
-@media(max-width:820px){.st:nth-child(2){border-right:none}.st:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:760px){.st{border-right:none;border-bottom:1px solid var(--line)}.st:last-child{border-bottom:none}}
 .st .n{font-family:var(--serif);font-size:clamp(1.55rem,4vw,2rem);font-weight:600;line-height:1;
   letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .st .n .u{color:var(--c2)}
@@ -114,25 +101,7 @@ section{padding:80px 0}
 @media(max-width:700px){section{padding:58px 0}}
 .alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
-/* ---------- domains ---------- */
-.domains{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-@media(max-width:940px){.domains{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.domains{grid-template-columns:1fr}}
-.dom{border:1px solid var(--line);border-radius:13px;padding:22px 20px;background:var(--surface);
-  position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s}
-.dom:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.dom::after{content:'';position:absolute;inset:0 0 auto 0;height:3px}
-.dom:nth-child(1)::after{background:var(--c1)}
-.dom:nth-child(2)::after{background:var(--c4)}
-.dom:nth-child(3)::after{background:var(--c2)}
-.dom:nth-child(4)::after{background:var(--c3)}
-.dom-ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;margin-bottom:14px}
-.dom h3{font-size:1rem;margin-bottom:7px}
-.dom p{font-size:.88rem;color:var(--muted);margin:0 0 12px;line-height:1.55}
-.dom .tools{font-family:var(--mono);font-size:10.5px;color:var(--faint);line-height:1.7;
-  border-top:1px solid var(--line);padding-top:10px}
-
-/* ---------- project / study cards ---------- */
+/* cards */
 .stack{display:grid;gap:26px}
 .card{border:1px solid var(--line);border-radius:16px;background:var(--surface);
   overflow:hidden;box-shadow:var(--shadow)}
@@ -144,7 +113,6 @@ section{padding:80px 0}
   padding:4px 10px;border-radius:5px;border:1px solid var(--line-2);color:var(--muted);background:var(--paper)}
 .tag-g{color:var(--c3);border-color:rgba(176,134,6,.35);background:rgba(176,134,6,.08)}
 .tag-p{color:var(--c1);border-color:rgba(108,63,168,.3);background:rgba(108,63,168,.07)}
-.tag-b{color:var(--c4);border-color:rgba(37,99,168,.3);background:rgba(37,99,168,.07)}
 .byline{font-size:.86rem;color:var(--faint);margin:0 0 14px;font-family:var(--mono)}
 .q{display:flex;gap:13px;align-items:flex-start;background:var(--tint);
   border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:9px;padding:15px 17px}
@@ -156,6 +124,7 @@ section{padding:80px 0}
 .body p{color:var(--muted);margin:0 0 14px}
 .body p:last-child{margin-bottom:0}
 .body b{color:var(--ink);font-weight:600}
+.lead-p{font-size:1.05rem;color:var(--ink)!important;font-family:var(--serif);line-height:1.55}
 .code{font-family:var(--mono);font-size:.88em;background:var(--tint);border:1px solid var(--line);
   padding:1px 6px;border-radius:4px}
 .sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
@@ -166,6 +135,14 @@ section{padding:80px 0}
 .pipe i{color:var(--faint);font-style:normal}
 .shot{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--tint)}
 .shot img{width:100%;height:auto;display:block;cursor:zoom-in}
+.shot-duo{display:grid;grid-template-columns:1.6fr 1fr;gap:1px;background:var(--line);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media(max-width:760px){.shot-duo{grid-template-columns:1fr}}
+.shot-duo figure{background:var(--tint);margin:0;display:flex;flex-direction:column}
+.shot-duo img{width:100%;height:auto;display:block;cursor:zoom-in;border-radius:0;border:none}
+.shot-duo figcaption{padding:12px 16px;background:var(--surface);flex:1;
+  font-size:.82rem;color:var(--faint);line-height:1.5;margin:0}
+.shot-duo figcaption b{color:var(--ink);font-weight:600;display:block;margin-bottom:2px}
 .figs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 @media(max-width:760px){.figs{grid-template-columns:1fr}}
 figure{margin:0}
@@ -181,8 +158,6 @@ figcaption b{color:var(--muted);font-weight:600}
   margin-top:14px;display:inline-block;letter-spacing:.04em}
 .clink:hover{text-decoration:underline}
 .nb{font-size:.86rem;color:var(--faint);font-style:italic}
-
-/* metric row */
 .mrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
   border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 @media(max-width:640px){.mrow{grid-template-columns:1fr}}
@@ -191,14 +166,39 @@ figcaption b{color:var(--muted);font-weight:600}
 .mr .n .u{color:var(--c2)}
 .mr .l{font-size:12px;color:var(--faint);margin-top:6px;line-height:1.45}
 
-/* table */
+/* ---- hypothesis elimination ---- */
+.elim{background:var(--tint);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:20px 0 0}
+@media(max-width:700px){.elim{padding:18px}}
+.elim-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--c5);margin:0 0 6px}
+.elim-t{font-family:var(--serif);font-size:1.12rem;font-weight:600;margin:0 0 18px;line-height:1.35}
+.hyps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+@media(max-width:700px){.hyps{grid-template-columns:repeat(2,1fr)}}
+.hyp{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:14px 13px;overflow:hidden;transition:opacity .5s,border-color .5s}
+.hyp .hn{font-family:var(--mono);font-size:9.5px;color:var(--faint);letter-spacing:.1em;margin-bottom:6px}
+.hyp .ht{font-size:.88rem;font-weight:550;line-height:1.35;color:var(--ink)}
+.hyp .strike{position:absolute;left:11px;right:11px;top:calc(50% + 7px);height:2px;background:var(--c5);
+  transform:scaleX(0);transform-origin:left;transition:transform .55s cubic-bezier(.65,0,.35,1)}
+.hyp .stamp{position:absolute;right:9px;bottom:8px;font-family:var(--mono);font-size:8.5px;
+  letter-spacing:.1em;color:var(--c5);border:1px solid var(--c5);padding:1px 5px;border-radius:4px;
+  opacity:0;transform:rotate(-7deg) scale(.85);transition:all .4s .25s}
+.hyp.out{opacity:.55;border-color:rgba(194,65,12,.3)}
+.hyp.out .strike{transform:scaleX(1)}
+.hyp.out .stamp{opacity:1;transform:rotate(-7deg) scale(1)}
+.verdict{background:var(--surface);border:1px solid rgba(194,65,12,.28);border-left:3px solid var(--c5);
+  border-radius:10px;padding:18px 20px;opacity:0;transform:translateY(10px);transition:all .6s}
+.verdict.in{opacity:1;transform:none}
+.verdict .big{font-family:var(--serif);font-size:1.06rem;font-weight:600;margin:0 0 9px;line-height:1.4}
+.verdict p{margin:0;font-size:.94rem;color:var(--muted)}
+.verdict b{color:var(--ink);font-weight:600}
+
 .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px}
 .tbl{width:100%;border-collapse:collapse;font-size:.89rem;font-variant-numeric:tabular-nums;min-width:520px}
 .tbl th,.tbl td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line)}
 .tbl th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
   color:var(--faint);font-weight:500;background:var(--tint)}
-.tbl td{color:var(--muted)}
-.tbl td:first-child{color:var(--ink)}
+.tbl td{color:var(--muted)} .tbl td:first-child{color:var(--ink)}
 .tbl td:not(:first-child){font-family:var(--mono);font-size:.84rem}
 .tbl tr.best td{color:var(--c2);background:rgba(18,130,122,.05)}
 .tbl tr.best td:first-child{font-weight:600}
@@ -216,14 +216,41 @@ figcaption b{color:var(--muted);font-weight:600}
 .limits li:last-child{margin-bottom:0}
 .limits li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:2px;background:var(--c1)}
 .limits li b{color:var(--ink);font-weight:600}
-.next{border-top:1px solid var(--line);padding:20px 32px 24px;background:var(--tint)}
-@media(max-width:700px){.next{padding:18px 20px}}
-.next .nh{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--c2);margin:0 0 10px}
-.next p{margin:0;color:var(--muted);font-size:.94rem}
-.next b{color:var(--ink);font-weight:600}
 
-/* two-up grid for smaller items */
+/* ---- next steps, as structured moves ---- */
+.next{border-top:1px solid var(--line);padding:24px 32px 28px;background:var(--tint)}
+@media(max-width:700px){.next{padding:20px}}
+.next .nh{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--c2);margin:0 0 16px;display:flex;align-items:center;gap:11px}
+.next .nh::after{content:'';flex:1;height:1px;background:var(--line-2)}
+.moves{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:780px){.moves{grid-template-columns:1fr}}
+.move{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:15px 16px}
+.move .mv-m{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--c2);background:rgba(18,130,122,.09);border:1px solid rgba(18,130,122,.22);
+  padding:3px 8px;border-radius:4px;display:inline-block;margin-bottom:9px}
+.move p{margin:0;font-size:.89rem;color:var(--muted);line-height:1.55}
+.move b{color:var(--ink);font-weight:600}
+.next .tail{margin:16px 0 0;font-size:.93rem;color:var(--muted)}
+.next .tail b{color:var(--ink);font-weight:600}
+
+/* domains */
+.domains{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:940px){.domains{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.domains{grid-template-columns:1fr}}
+.dom{border:1px solid var(--line);border-radius:13px;padding:22px 20px;background:var(--surface);
+  position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s}
+.dom:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.dom::after{content:'';position:absolute;inset:0 0 auto 0;height:3px}
+.dom:nth-child(1)::after{background:var(--c1)} .dom:nth-child(2)::after{background:var(--c4)}
+.dom:nth-child(3)::after{background:var(--c2)} .dom:nth-child(4)::after{background:var(--c3)}
+.dom-ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;margin-bottom:14px}
+.dom h3{font-size:1rem;margin-bottom:7px}
+.dom p{font-size:.88rem;color:var(--muted);margin:0 0 12px;line-height:1.55}
+.dom .tools{font-family:var(--mono);font-size:10.5px;color:var(--faint);line-height:1.7;
+  border-top:1px solid var(--line);padding-top:10px}
+
+/* duo minis */
 .duo{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 @media(max-width:840px){.duo{grid-template-columns:1fr}}
 .mini{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
@@ -234,8 +261,7 @@ figcaption b{color:var(--muted);font-weight:600}
 .mini-body{padding:22px;flex:1;display:flex;flex-direction:column}
 .mini h3{font-size:1.05rem}
 .mini p{font-size:.92rem;color:var(--muted);margin:0 0 12px}
-.mini .grow{flex:1}
-.mini b{color:var(--ink);font-weight:600}
+.mini .grow{flex:1} .mini b{color:var(--ink);font-weight:600}
 .bars{margin:2px 0 12px}
 .bar-row{display:grid;grid-template-columns:88px 1fr 62px;gap:10px;align-items:center;margin-bottom:8px}
 .bar-name{font-size:.85rem;color:var(--muted)}
@@ -246,32 +272,40 @@ figcaption b{color:var(--muted);font-weight:600}
 .bar-row.best .bar-fill{background:var(--c2)}
 .bar-row.best .bar-val{color:var(--c2);font-weight:600}
 
-/* interests */
-.ints{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media(max-width:900px){.ints{grid-template-columns:1fr}}
-.int{border:1px solid var(--line);border-radius:13px;padding:24px 22px;background:var(--surface);
-  transition:transform .22s,box-shadow .22s;position:relative;overflow:hidden}
-.int:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.int::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.int:nth-child(1)::before{background:var(--c1)}
-.int:nth-child(2)::before{background:var(--c2)}
-.int:nth-child(3)::before{background:var(--c3)}
-.int h3{font-size:1.03rem;margin-bottom:10px}
-.int p{color:var(--muted);font-size:.93rem;margin:0 0 13px}
-.int .from{font-family:var(--mono);font-size:10.5px;color:var(--faint);
-  border-top:1px solid var(--line);padding-top:11px;display:block}
-.int b{color:var(--ink);font-weight:600}
+/* ---- direction: from → to ---- */
+.dirs{display:grid;gap:16px}
+.dir{background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  display:grid;grid-template-columns:64px 1fr;overflow:hidden;transition:transform .22s,box-shadow .22s}
+.dir:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+@media(max-width:700px){.dir{grid-template-columns:1fr}}
+.dir-rail{display:grid;place-items:center;border-right:1px solid var(--line);padding:20px 0}
+@media(max-width:700px){.dir-rail{border-right:none;border-bottom:1px solid var(--line);padding:14px 0}}
+.dir-num{font-family:var(--serif);font-size:1.6rem;font-weight:600;line-height:1}
+.dir:nth-child(1) .dir-rail{background:rgba(108,63,168,.05)} .dir:nth-child(1) .dir-num{color:var(--c1)}
+.dir:nth-child(2) .dir-rail{background:rgba(18,130,122,.05)} .dir:nth-child(2) .dir-num{color:var(--c2)}
+.dir:nth-child(3) .dir-rail{background:rgba(176,134,6,.06)} .dir:nth-child(3) .dir-num{color:var(--c3)}
+.dir-body{padding:22px 24px}
+@media(max-width:700px){.dir-body{padding:18px 20px}}
+.dir h3{font-size:1.08rem;margin-bottom:10px}
+.dir p{margin:0 0 14px;color:var(--muted);font-size:.95rem}
+.dir b{color:var(--ink);font-weight:600}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:14px;border-top:1px solid var(--line)}
+.flow-box{font-family:var(--mono);font-size:10.5px;line-height:1.45;padding:7px 11px;border-radius:7px;
+  border:1px solid var(--line);background:var(--tint);color:var(--muted);max-width:33ch}
+.flow-box .fl{display:block;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:2px}
+.flow-arrow{color:var(--faint);font-size:15px;line-height:1}
+.flow-to{border-color:rgba(18,130,122,.28);background:rgba(18,130,122,.06);color:var(--c2)}
+.flow-to .fl{color:var(--c2);opacity:.75}
 
-/* ---------- education + certificates ---------- */
+/* education */
 .edu{display:grid;grid-template-columns:1fr 1fr;gap:44px}
 @media(max-width:880px){.edu{grid-template-columns:1fr;gap:34px}}
 .deg{display:flex;gap:15px;padding:18px 0;border-bottom:1px solid var(--line)}
 .deg:last-child{border-bottom:none}
 .deg-ic{flex:none;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;margin-top:2px}
-.deg-main{flex:1}
+.deg-main{flex:1;min-width:0}
 .deg-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
-/* Let the title block absorb the slack so the date always stays flush right,
-   instead of wrapping under longer course names. */
 .deg-top>div:first-child{flex:1 1 auto;min-width:0}
 .deg-top .when{flex:0 0 auto}
 @media(max-width:520px){.deg-top{flex-wrap:wrap}}
@@ -282,7 +316,6 @@ figcaption b{color:var(--muted);font-weight:600}
   border:1px solid rgba(18,130,122,.22);border-radius:6px;padding:4px 10px}
 .cg .g{font-family:var(--mono);font-size:.85rem;color:var(--c2);font-weight:500}
 .cg .gl{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.09em;text-transform:uppercase}
-
 .cert{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);align-items:flex-start}
 .cert:last-child{border-bottom:none}
 .cert-ic{flex:none;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;margin-top:1px}
@@ -295,7 +328,6 @@ figcaption b{color:var(--muted);font-weight:600}
   text-transform:uppercase;color:var(--c3);background:rgba(176,134,6,.1);
   border:1px solid rgba(176,134,6,.3);padding:2px 7px;border-radius:999px;margin-left:8px;vertical-align:middle}
 
-/* contact */
 .contact{background:var(--ink);color:#F2F5F8;padding:80px 0}
 .contact h2{color:#fff} .contact h2 em{font-style:italic;color:#7FD8CF}
 .contact .label{color:rgba(242,245,248,.45)}
@@ -336,11 +368,11 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
   <div class="nav-in">
     <a href="#top" class="nav-name">Chaitali Ranalkar</a>
     <div class="nav-links">
-      <a href="#domains">Domains</a>
       <a href="#projects">Projects</a>
       <a href="#research">Research</a>
       <a href="#more">Coursework</a>
-      <a href="#education">Education</a>
+      <a href="#domains">Domains</a>
+      <a href="#direction">Direction</a>
       <a href="/">Applied&nbsp;work</a>
       <a href="../Chaitali-Ranalkar-Resume.pdf" class="nav-cv" download>CV ↓</a>
     </div>
@@ -358,22 +390,13 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
       <p class="thesis">Here's how I went from building &lsquo;data dumps&rsquo;
         to designing <em>actionable data products.</em></p>
       <p class="hero-sub">
-        M.Sc. Big Data Analytics, built on a mathematics degree. Machine learning, databases and
-        generative AI — applied to problems where the answer has to survive scrutiny.
+        Machine learning, databases and generative AI — applied to problems where the answer has
+        to survive scrutiny, not just look clean.
       </p>
-      <p class="hero-meta">St. Xavier's College, Mumbai (Autonomous) &nbsp;·&nbsp; B.Sc. Mathematics
-        &nbsp;·&nbsp; Senior Executive, KKC &amp; Associates LLP</p>
       <div class="cta">
         <a class="btn btn-pri" href="#projects">See the work ↓</a>
         <a class="btn btn-sec" href="#research">Research</a>
         <a class="btn btn-sec" href="../Chaitali-Ranalkar-Resume.pdf" download>CV</a>
-      </div>
-      <div class="legend">
-        <span class="lg"><i style="background:var(--c1)"></i> At-risk</span>
-        <span class="lg"><i style="background:var(--c2)"></i> Potential loyalists</span>
-        <span class="lg"><i style="background:var(--c3)"></i> Loyal</span>
-        <span class="lg-note">— K-means, running live. The three segments are the ones my
-          thesis recovered.</span>
       </div>
     </div>
   </div>
@@ -384,23 +407,458 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
     <div class="strip-in">
       <div class="st"><div class="n"><span data-count="40">0</span><span class="u">%</span></div>
         <div class="l">less manual effort after automating ITGC testing</div></div>
-      <div class="st"><div class="n"><span data-count="94">0</span><span class="u">%</span></div>
-        <div class="l">ROC-AUC on the best churn classifier of five</div></div>
+      <div class="st"><div class="n">0<span class="u">.94</span></div>
+        <div class="l">ROC-AUC on the best of five churn classifiers</div></div>
       <div class="st"><div class="n"><span data-count="26">0</span></div>
-        <div class="l">documented SQL queries in one investigation</div></div>
-      <div class="st"><div class="n"><span data-count="9">0</span>.35</div>
-        <div class="l">M.Sc. CGPA — 9.25 in B.Sc. Mathematics</div></div>
+        <div class="l">documented SQL queries in one root-cause investigation</div></div>
     </div>
   </div>
 </div>
 
-<!-- ============ DOMAINS ============ -->
-<section id="domains">
+<!-- ============ 01 PROJECTS ============ -->
+<section id="projects">
   <div class="wrap">
-    <p class="label rv">What I work in</p>
+    <p class="label rv"><span class="num">01</span> Projects</p>
+    <h2 class="rv">Built and shipped</h2>
+    <p class="lede rv" style="margin-bottom:36px">
+      Professional and independent work — where the data is real, messy, and usually confidential.
+    </p>
+
+    <div class="stack">
+
+      <!-- Quick commerce -->
+      <article class="card rv">
+        <div class="card-head bd">
+          <div class="tags"><span class="tag tag-g">Independent</span>
+            <span class="tag">Python · BigQuery · Power BI</span><span class="tag">2026</span></div>
+          <h3>Quick-Commerce Gap Analysis</h3>
+          <div class="q">
+            <span class="q-l">The idea</span>
+            <p>A ten-minute delivery app knows exactly which orders failed. It has almost no idea
+              which customers it lost before an order ever existed.</p>
+          </div>
+        </div>
+
+        <div class="body">
+          <p class="lead-p">
+            When a quick-commerce app misses its promise, the company sees a cancelled order and
+            blames the rider. I wanted to test that instinct — because the moment a customer gives
+            up usually happens long before a delivery is late.
+          </p>
+          <p>
+            Zepto and Blinkit don't publish operational data, so I built one that behaves like
+            theirs: <b>150,000 searches and 78,936 orders</b> across dark stores, inventory,
+            delivery times, refunds and support tickets — complete with the inconsistencies a real
+            platform carries. Then I worked it as though I'd been handed it on my first day, with
+            no one to tell me where to look.
+          </p>
+          <p>
+            <b>The instinct was wrong.</b> Most demand never reached the delivery stage at all —
+            <b>54.28% of searches ended with the product simply not there</b>. A team optimising
+            riders would have been fixing the wrong half of the business.
+          </p>
+        </div>
+
+        <div class="mrow">
+          <div class="mr"><div class="n"><span data-count="54">0</span><span class="u">%</span></div>
+            <div class="l">of searches ended with no product available</div></div>
+          <div class="mr"><div class="n"><span data-count="26">0</span></div>
+            <div class="l">BigQuery queries, each documented with purpose and result</div></div>
+          <div class="mr"><div class="n"><span data-count="4">0</span></div>
+            <div class="l">hypotheses tested on one anomaly — all four eliminated</div></div>
+        </div>
+
+        <div class="shot">
+          <img src="../assets/qc-leakage-map.webp" width="1008" height="691" loading="lazy"
+               alt="Power BI dashboard mapping zero-result searches, late deliveries and cancelled orders by area">
+        </div>
+
+        <div class="body">
+          <div class="elim" id="elim">
+            <p class="elim-h">The part I couldn't finish</p>
+            <p class="elim-t">One store delivered on time 6.13% of the time. The network average
+              was around 42%.</p>
+            <div class="hyps">
+              <div class="hyp"><div class="hn">H1</div><div class="ht">Peak-hour load</div>
+                <div class="strike"></div><div class="stamp">Ruled out</div></div>
+              <div class="hyp"><div class="hn">H2</div><div class="ht">Distance to customer</div>
+                <div class="strike"></div><div class="stamp">Ruled out</div></div>
+              <div class="hyp"><div class="hn">H3</div><div class="ht">Order workload</div>
+                <div class="strike"></div><div class="stamp">Ruled out</div></div>
+              <div class="hyp"><div class="hn">H4</div><div class="ht">Picking &amp; packing</div>
+                <div class="strike"></div><div class="stamp">Ruled out</div></div>
+            </div>
+            <div class="verdict" id="verdict">
+              <p class="big">Four explanations, four dead ends.</p>
+              <p>I published it as an <b>unresolved anomaly</b> flagged for on-site investigation.
+                Picking the most plausible-sounding cause would have been faster, and wrong — and
+                someone would have spent a quarter fixing the wrong thing.</p>
+            </div>
+          </div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">BigQuery SQL</span>
+            <span class="chip">Power BI</span><span class="chip">Root-cause analysis</span></div>
+          <a class="clink" href="https://github.com/chaits1412/Quick-commerce-analytics"
+             target="_blank" rel="noopener">Read all 26 queries on GitHub →</a>
+        </div>
+      </article>
+
+      <!-- Partner dashboard, two sheets -->
+      <article class="card rv">
+        <div class="card-head bd">
+          <div class="tags"><span class="tag tag-p">Professional</span>
+            <span class="tag">Power BI · DAX</span><span class="tag">2026</span></div>
+          <h3>Project &amp; Partner Management Dashboard</h3>
+          <div class="q">
+            <span class="q-l">The problem</span>
+            <p>Partners needed one view of billing, utilisation and project health — without
+              seeing each other's engagements.</p>
+          </div>
+        </div>
+        <div class="shot-duo">
+          <figure>
+            <img src="../assets/pp-project-overview.webp" width="1501" height="1056" loading="lazy"
+                 alt="Dashboard sheet one: project status, complexity, cost versus benefit and cost overrun by project">
+            <figcaption><b>Sheet 1 — Project overview</b>
+              Status, complexity, cost vs. benefit and cost-overrun % by project and region.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/pp-resource-overview.webp" width="765" height="569" loading="lazy"
+                 alt="Dashboard sheet two: role-wise hours worked and employee utilisation tagging">
+            <figcaption><b>Sheet 2 — Resource &amp; utilisation</b>
+              Task completion by employee, role-wise hours, and over/under-utilisation bands
+              driven by custom DAX.</figcaption>
+          </figure>
+        </div>
+        <div class="body">
+          <p>
+            Access is enforced by <b>row-level security</b> in the data model rather than by
+            convention, so a partner physically cannot query another's engagements. Year-over-year
+            cost comparison runs across total hours and partner allocations, with breakdowns by
+            ITGC, ITAC and DA.
+          </p>
+          <p class="nb">
+            The production dashboard holds client data. Shown here is an independent rebuild on a
+            public dataset — same DAX, same utilisation logic, nothing to redact.
+          </p>
+          <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span>
+            <span class="chip">Row-level security</span><span class="chip">Data modelling</span></div>
+        </div>
+      </article>
+
+      <!-- ITGC -->
+      <article class="card rv">
+        <div class="card-head">
+          <div class="tags"><span class="tag tag-p">Professional</span>
+            <span class="tag">Python · Streamlit · NLP</span><span class="tag">2025</span></div>
+          <h3>ITGC Automation Tool</h3>
+          <div class="q">
+            <span class="q-l">The constraint</span>
+            <p>Audit documents cannot be sent to an external API. The model had to come to the
+              data, not the other way round.</p>
+          </div>
+        </div>
+        <div class="mrow">
+          <div class="mr"><div class="n"><span data-count="50">0</span><span class="u">%</span></div>
+            <div class="l">less manual review effort on policy documents</div></div>
+          <div class="mr"><div class="n"><span data-count="100">0</span><span class="u">+</span></div>
+            <div class="l">GST reconciliations processed per cycle</div></div>
+          <div class="mr"><div class="n">0</div>
+            <div class="l">documents leaving the firm — fully on-premises</div></div>
+        </div>
+        <div class="body">
+          <p>
+            An <b>entirely local NLP pipeline</b> — upload, summarise, search — over long audit and
+            policy documents, plus a Streamlit application automating GST R1 and 3B reconciliation
+            with validation and mismatch reporting.
+          </p>
+          <p class="nb">
+            No screenshots: it runs on internal audit data. Architecture and outcome I can
+            describe; the interface I can't show.
+          </p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Streamlit</span>
+            <span class="chip">On-premises NLP</span><span class="chip">Process automation</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 RESEARCH ============ -->
+<section id="research" class="alt">
+  <div class="wrap">
+    <p class="label rv"><span class="num">02</span> Research</p>
+    <h2 class="rv">M.Sc. studies, in full</h2>
+    <p class="lede rv" style="margin-bottom:36px">
+      Question first, method as actually run, results as they came out — then what the work does
+      <i>not</i> establish. That last part is the one I care about.
+    </p>
+
+    <div class="stack">
+
+      <article class="card rv">
+        <div class="card-head bd">
+          <div class="tags"><span class="tag tag-g">Research Project</span>
+            <span class="tag">Unsupervised learning</span><span class="tag">2024–25</span></div>
+          <h3>Customer Segmentation using the RFM Model and K-Means</h3>
+          <p class="byline">Dept. of Information Technology, St. Xavier's College, Mumbai (Autonomous)</p>
+          <div class="q">
+            <span class="q-l">Question</span>
+            <p>Can raw transactions become a segmentation that is both statistically defensible and
+              specific enough to act on?</p>
+          </div>
+        </div>
+        <div class="body">
+          <p class="sub">Method</p>
+          <div class="pipe">
+            <span>Transactions</span><i>→</i><span>Aggregate per customer</span><i>→</i>
+            <span>RFM</span><i>→</i><span>Log transform</span><i>→</i>
+            <span>Min–Max</span><i>→</i><span>K-means</span><i>→</i><span>Elbow</span>
+          </div>
+          <p style="margin-top:14px">
+            Aggregated per <span class="code">CustomerID</span> into <b>Recency</b>,
+            <b>Frequency</b> and <b>Monetary</b>. Log transform for the heavy right skew of
+            transactional spend; Min–Max so Monetary couldn't dominate the distance metric through
+            its units alone. UK customers only — less regional noise, narrower claim.
+          </p>
+          <p>
+            I ran <b>two segmentations on purpose</b>: a rule-based RFM quintile score
+            (<span class="code">555</span> top, <span class="code">111</span> lost) and K-means on
+            the same features. One interpretable by construction, one learned. Reading them against
+            each other is what exposed the limitations.
+          </p>
+
+          <p class="sub">Results</p>
+          <div class="figs">
+            <figure>
+              <img src="figs/elbow.webp" width="589" height="455" loading="lazy"
+                   alt="Elbow plot of within-cluster sum of squares against number of clusters, bending at K equals 3">
+              <figcaption><b>Elbow selection.</b> Inertia against K, bending at <b>K = 3</b>.</figcaption>
+            </figure>
+            <figure>
+              <img src="figs/clusters-3d.webp" width="746" height="666" loading="lazy"
+                   alt="3D scatter of customers in log-Recency, log-Frequency and log-Monetary space coloured by three K-means clusters">
+              <figcaption><b>The segments</b> in log-RFM space — at-risk, potential loyalists, loyal.</figcaption>
+            </figure>
+          </div>
+          <p style="margin-top:18px">
+            Three readable segments. The rule-based codes agreed at the extremes and
+            <b>disagreed in the middle</b> — exactly where a hard partition is least defensible.
+          </p>
+
+          <div class="limits">
+            <p class="lh">What this does not establish</p>
+            <ul>
+              <li><b>The elbow is a heuristic, not a criterion.</b> No silhouette or gap statistic
+                was computed, so validity is argued visually rather than measured.</li>
+              <li><b>K-means assumes a shape the data doesn't have.</b> It wants spherical,
+                equal-variance clusters under Euclidean distance; log-RFM space is neither, so the
+                boundary is partly an artefact of forcing a partition onto a continuum.</li>
+              <li><b>Outliers pull centroids.</b> A few very high-Monetary customers exert
+                influence far beyond their count, and K-means can't set them aside.</li>
+              <li><b>Agreement isn't validation.</b> Both segmentations use the same three
+                features, so they share their blind spots.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="next">
+          <p class="nh">Where I'd take it</p>
+          <div class="moves">
+            <div class="move"><span class="mv-m">Gaussian mixtures</span>
+              <p>Soft membership, so the ambiguous middle is allowed to <b>stay ambiguous</b>
+                instead of being adjudicated by a boundary.</p></div>
+            <div class="move"><span class="mv-m">DBSCAN</span>
+              <p>Density-defined segments, and the thing K-means cannot do: let a point
+                <b>belong to nothing</b>.</p></div>
+            <div class="move"><span class="mv-m">Hierarchical</span>
+              <p>Test whether three is real structure or <b>an accident of K</b>, by seeing how
+                the tree splits.</p></div>
+          </div>
+          <p class="tail">
+            And a deeper one: three aggregates throw away the entire temporal sequence of a purchase
+            history. <b>I suspect order matters more than RFM allows.</b>
+          </p>
+        </div>
+      </article>
+
+      <article class="card rv">
+        <div class="card-head bd">
+          <div class="tags"><span class="tag tag-p">Coursework Project</span>
+            <span class="tag">Supervised learning</span><span class="tag">2024</span></div>
+          <h3>Predicting Customer Churn: five classifiers compared</h3>
+          <p class="byline">M.Sc. Big Data Analytics · 10,000 bank customers, 14 attributes</p>
+          <div class="q">
+            <span class="q-l">Question</span>
+            <p>Which model family earns its complexity on tabular behavioural data — and what
+              drives the prediction once you look inside?</p>
+          </div>
+        </div>
+        <div class="body">
+          <p class="sub">Method</p>
+          <p>
+            One-hot for Geography, binary for Gender, identifiers dropped, skewed features
+            normalised. Five classifiers on a held-out split; the random forest tuned by
+            <b>randomised search over a 5-fold cross-validated grid</b>.
+          </p>
+
+          <p class="sub">Results</p>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <tr><th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>ROC-AUC</th></tr>
+              <tr><td>Logistic regression</td><td>75.67%</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Gradient boosting</td><td>84.13%</td><td>0.834</td><td>0.715</td><td>0.770</td><td>—</td></tr>
+              <tr><td>XGBoost</td><td>86.61%</td><td>0.836</td><td>0.793</td><td>0.814</td><td>0.9322</td></tr>
+              <tr><td>Random forest</td><td>87.98%</td><td>0.857</td><td>0.809</td><td>0.832</td><td>0.9396</td></tr>
+              <tr class="best"><td>Random forest, tuned</td><td>88.06%</td><td>0.859</td><td>0.809</td><td>0.833</td><td>—</td></tr>
+            </table>
+          </div>
+          <p class="tbl-hint">Scroll the table sideways →</p>
+
+          <div class="figs" style="margin-top:22px">
+            <figure>
+              <img src="figs/roc-rf.webp" width="567" height="457" loading="lazy"
+                   alt="ROC curve for the random forest classifier with area under the curve 0.9396">
+              <figcaption><b>Random forest ROC</b>, AUC 0.9396 — the best separation of the five.</figcaption>
+            </figure>
+            <figure>
+              <img src="figs/feature-importance.webp" width="972" height="547" loading="lazy"
+                   alt="Bar chart of random forest feature importances with Age highest at 0.28">
+              <figcaption><b>Feature importance.</b> <b>Age</b> at ≈0.28, roughly double the next
+                feature.</figcaption>
+            </figure>
+          </div>
+          <p style="margin-top:18px">
+            <b>Age outweighs every financial attribute</b> — which reframes churn here as
+            life-stage rather than economics. And logistic regression trails by twelve points, so
+            the boundary is genuinely non-linear, not just noisy.
+          </p>
+
+          <div class="limits">
+            <p class="lh">What this does not establish</p>
+            <ul>
+              <li><b>Tuning bought nothing.</b> 87.98% → 88.06% is eight hundredths of a point,
+                inside run-to-run variance. That's a null result, not an improvement.</li>
+              <li><b>Imbalance flatters every model.</b> Churners are ~20% of the sample, so
+                predicting "stays" scores near 80%. Recall tops out at 0.81 — one churner in five
+                still missed.</li>
+              <li><b>Impurity importance is biased</b> toward continuous features. Age is
+                continuous, Gender binary; the gap is partly an artefact of the measure.</li>
+              <li><b>No calibration.</b> AUC says the scores rank well; nothing here says the
+                probabilities mean what they claim — and any cost-sensitive threshold depends on
+                exactly that.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="next">
+          <p class="nh">Where I'd take it</p>
+          <div class="moves">
+            <div class="move"><span class="mv-m">Permutation + SHAP</span>
+              <p>Replace impurity importance, which <b>favours continuous features</b> regardless
+                of whether they carry signal.</p></div>
+            <div class="move"><span class="mv-m">Calibration curves</span>
+              <p>Before any threshold is set, check the predicted probabilities
+                <b>mean what they say</b>.</p></div>
+            <div class="move"><span class="mv-m">Cost-sensitive learning</span>
+              <p>Treat the 20/80 imbalance directly, rather than <b>reporting accuracy over
+                it</b>.</p></div>
+          </div>
+          <p class="tail">
+            The real question underneath: is the Age effect a life-stage signal, or
+            <b>a proxy for something this dataset never measured?</b>
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 COURSEWORK ============ -->
+<section id="more">
+  <div class="wrap">
+    <p class="label rv"><span class="num">03</span> Coursework &amp; explorations</p>
+    <h2 class="rv">Smaller studies</h2>
+    <p class="lede rv" style="margin-bottom:34px">
+      Dashboards and model comparisons from the M.Sc. and independent practice.
+    </p>
+    <div class="duo">
+
+      <article class="mini rv">
+        <div class="mini-img">
+          <img src="../assets/bank-churn.webp" width="1600" height="620" loading="lazy"
+               alt="Tableau dashboard analysing bank customer churn by country, product count and credit score">
+        </div>
+        <div class="mini-body">
+          <h3>Bank Churn — the visual layer</h3>
+          <p class="grow">
+            Tableau counterpart to the churn study. The finding that stuck: customers holding
+            <b>four products churned at close to 100%</b>. Over-selling tracks with
+            dissatisfaction, not loyalty.
+          </p>
+          <div class="chips"><span class="chip">Tableau</span><span class="chip">scikit-learn</span>
+            <span class="chip">XGBoost</span></div>
+        </div>
+      </article>
+
+      <article class="mini rv">
+        <div class="mini-img">
+          <img src="../assets/movie-trends.webp" width="1600" height="608" loading="lazy"
+               alt="Power BI dashboard showing box office revenue trends, genre performance and audience ratings">
+        </div>
+        <div class="mini-body">
+          <h3>Cinematic Insights</h3>
+          <p class="grow">
+            Box office revenue, genre performance and ratings across two decades, segmented into
+            high and low revenue bands to isolate what separates a hit from an underperformer.
+          </p>
+          <div class="chips"><span class="chip">Power BI</span><span class="chip">Data modelling</span></div>
+        </div>
+      </article>
+
+      <article class="mini rv" style="grid-column:1/-1">
+        <div class="mini-body">
+          <h3>ETH-USD Time Series Forecasting</h3>
+          <p>
+            Four approaches on five years of daily Ethereum prices, scored by RMSE on a held-out
+            split. <b>LSTM won by ~7.6×</b> — the series carries non-linear structure the classical
+            models can't represent.
+          </p>
+          <div class="bars" id="bars">
+            <div class="bar-row best"><span class="bar-name">LSTM</span>
+              <span class="bar-track"><span class="bar-fill" data-pct="8.5"></span></span>
+              <span class="bar-val">135.82</span></div>
+            <div class="bar-row"><span class="bar-name">SARIMA</span>
+              <span class="bar-track"><span class="bar-fill" data-pct="64.7"></span></span>
+              <span class="bar-val">1031.44</span></div>
+            <div class="bar-row"><span class="bar-name">Holt's Winter</span>
+              <span class="bar-track"><span class="bar-fill" data-pct="65.2"></span></span>
+              <span class="bar-val">1040.08</span></div>
+            <div class="bar-row"><span class="bar-name">Prophet</span>
+              <span class="bar-track"><span class="bar-fill" data-pct="100"></span></span>
+              <span class="bar-val">1594.13</span></div>
+          </div>
+          <p class="nb">
+            Caveat: the LSTM runs unseeded, so its RMSE shifts between runs. One run against
+            deterministic baselines is suggestive, not conclusive.
+          </p>
+          <div class="chips"><span class="chip">TensorFlow</span><span class="chip">statsmodels</span>
+            <span class="chip">Prophet</span><span class="chip">pmdarima</span></div>
+          <a class="clink" href="https://github.com/chaits1412/data-analytics-mini-projects"
+             target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 DOMAINS ============ -->
+<section id="domains" class="alt">
+  <div class="wrap">
+    <p class="label rv"><span class="num">04</span> What I work in</p>
     <h2 class="rv">Four things I keep coming back to</h2>
     <p class="lede rv" style="margin-bottom:34px">
-      Not a skills list — the four areas every project below actually sits in.
+      Not a skills list — the four areas everything above actually sits in.
     </p>
     <div class="domains">
 
@@ -462,426 +920,79 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
   </div>
 </section>
 
-<!-- ============ PROJECTS ============ -->
-<section id="projects" class="alt">
+<!-- ============ 05 DIRECTION ============ -->
+<section id="direction">
   <div class="wrap">
-    <p class="label rv">Projects</p>
-    <h2 class="rv">Built and shipped</h2>
-    <p class="lede rv" style="margin-bottom:36px">
-      Professional and independent work — where the data is real, messy, and usually confidential.
-    </p>
-
-    <div class="stack">
-
-      <!-- Quick commerce -->
-      <article class="card rv">
-        <div class="card-head bd">
-          <div class="tags"><span class="tag tag-g">Independent</span>
-            <span class="tag">Python · BigQuery · Power BI</span><span class="tag">2026</span></div>
-          <h3>Quick-Commerce Gap Analysis</h3>
-          <div class="q">
-            <span class="q-l">Premise</span>
-            <p>Real quick-commerce data isn't public — so I generated 150,000 searches and 78,936
-              orders, then investigated it as if it were live.</p>
-          </div>
-        </div>
-        <div class="mrow">
-          <div class="mr"><div class="n"><span data-count="54">0</span><span class="u">%</span></div>
-            <div class="l">of searches ended in no product — the largest gap in the dataset</div></div>
-          <div class="mr"><div class="n"><span data-count="26">0</span></div>
-            <div class="l">BigQuery queries, each documented with purpose and result</div></div>
-          <div class="mr"><div class="n"><span data-count="4">0</span></div>
-            <div class="l">hypotheses tested on one anomaly — and all four eliminated</div></div>
-        </div>
-        <div class="shot">
-          <img src="../assets/qc-leakage-map.webp" width="1008" height="691" loading="lazy"
-               alt="Power BI dashboard mapping zero-result searches, late deliveries and cancelled orders by area">
-        </div>
-        <div class="body">
-          <p>
-            One fulfilment centre delivered on time <b>6.13%</b> of the time against a ~42% network
-            average. I chained SQL queries to test peak-hour load, distance, workload and picking
-            time. <b>Every one came back negative.</b>
-          </p>
-          <p>
-            So I published it as unresolved and flagged it for on-site investigation. Choosing the
-            most plausible-sounding cause would have been faster and wrong.
-          </p>
-          <div class="chips"><span class="chip">Python</span><span class="chip">BigQuery SQL</span>
-            <span class="chip">Power BI</span><span class="chip">Root-cause analysis</span></div>
-          <a class="clink" href="https://github.com/chaits1412/Quick-commerce-analytics"
-             target="_blank" rel="noopener">Read all 26 queries on GitHub →</a>
-        </div>
-      </article>
-
-      <!-- Partner dashboard -->
-      <article class="card rv">
-        <div class="card-head bd">
-          <div class="tags"><span class="tag tag-p">Professional</span>
-            <span class="tag">Power BI · DAX</span><span class="tag">2026</span></div>
-          <h3>Project &amp; Partner Management Dashboard</h3>
-          <div class="q">
-            <span class="q-l">Problem</span>
-            <p>Partners needed one view of billing, utilisation and project health — without
-              seeing each other's engagements.</p>
-          </div>
-        </div>
-        <div class="shot">
-          <img src="../assets/pp-project-overview.webp" width="1501" height="1056" loading="lazy"
-               alt="Power BI dashboard showing project status, complexity, cost versus benefit and cost overrun by project">
-        </div>
-        <div class="body">
-          <p>
-            Built with <b>row-level security</b>, so the access model is enforced in the data layer
-            rather than by convention. Year-over-year cost comparison across total hours and
-            partner allocations, with multi-sheet breakdowns by ITGC, ITAC and DA.
-          </p>
-          <p class="nb">
-            The production dashboard holds client data. Shown here is an independent rebuild on a
-            public dataset — same DAX, same utilisation logic, nothing to redact.
-          </p>
-          <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span>
-            <span class="chip">Row-level security</span><span class="chip">Data modelling</span></div>
-        </div>
-      </article>
-
-      <!-- ITGC -->
-      <article class="card rv">
-        <div class="card-head">
-          <div class="tags"><span class="tag tag-p">Professional</span>
-            <span class="tag">Python · Streamlit · NLP</span><span class="tag">2025</span></div>
-          <h3>ITGC Automation Tool</h3>
-          <div class="q">
-            <span class="q-l">Constraint</span>
-            <p>Audit documents cannot be sent to an external API. The model had to come to the
-              data, not the other way round.</p>
-          </div>
-        </div>
-        <div class="mrow">
-          <div class="mr"><div class="n"><span data-count="50">0</span><span class="u">%</span></div>
-            <div class="l">less manual review effort on policy documents</div></div>
-          <div class="mr"><div class="n"><span data-count="100">0</span><span class="u">+</span></div>
-            <div class="l">GST reconciliations processed per cycle</div></div>
-          <div class="mr"><div class="n">0</div>
-            <div class="l">documents leaving the firm — fully on-premises</div></div>
-        </div>
-        <div class="body">
-          <p>
-            An <b>entirely local NLP pipeline</b> — upload, summarise, search — over long audit and
-            policy documents, plus a Streamlit application automating GST R1 and 3B reconciliation
-            with validation and mismatch reporting.
-          </p>
-          <p class="nb">
-            No screenshots: it runs on internal audit data. Architecture and outcome I can describe;
-            the interface I can't show.
-          </p>
-          <div class="chips"><span class="chip">Python</span><span class="chip">Streamlit</span>
-            <span class="chip">On-premises NLP</span><span class="chip">Process automation</span></div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ RESEARCH ============ -->
-<section id="research">
-  <div class="wrap">
-    <p class="label rv">Research</p>
-    <h2 class="rv">M.Sc. studies, in full</h2>
-    <p class="lede rv" style="margin-bottom:36px">
-      Question first, method as actually run, results as they came out — then what the work does
-      <i>not</i> establish. That last part is the one I care about.
-    </p>
-
-    <div class="stack">
-
-      <!-- RFM -->
-      <article class="card rv">
-        <div class="card-head bd">
-          <div class="tags"><span class="tag tag-g">Research Project</span>
-            <span class="tag">Unsupervised learning</span><span class="tag">2024–25</span></div>
-          <h3>Customer Segmentation using the RFM Model and K-Means</h3>
-          <p class="byline">Dept. of Information Technology, St. Xavier's College, Mumbai (Autonomous)</p>
-          <div class="q">
-            <span class="q-l">Question</span>
-            <p>Can raw transactions become a segmentation that is both statistically defensible and
-              specific enough to act on?</p>
-          </div>
-        </div>
-        <div class="body">
-          <p class="sub">Method</p>
-          <div class="pipe">
-            <span>Transactions</span><i>→</i><span>Aggregate per customer</span><i>→</i>
-            <span>RFM</span><i>→</i><span>Log transform</span><i>→</i>
-            <span>Min–Max</span><i>→</i><span>K-means</span><i>→</i><span>Elbow</span>
-          </div>
-          <p style="margin-top:14px">
-            Aggregated per <span class="code">CustomerID</span> into <b>Recency</b>,
-            <b>Frequency</b> and <b>Monetary</b>. Log transform for the heavy right skew of
-            transactional spend; Min–Max so Monetary couldn't dominate the distance metric through
-            its units alone. UK customers only — less regional noise, narrower claim.
-          </p>
-          <p>
-            I ran <b>two segmentations on purpose</b>: a rule-based RFM quintile score
-            (<span class="code">555</span> top, <span class="code">111</span> lost) and K-means on
-            the same features. One interpretable by construction, one learned. Reading them against
-            each other is what exposed the limitations.
-          </p>
-
-          <p class="sub">Results</p>
-          <div class="figs">
-            <figure>
-              <img src="figs/elbow.webp" width="589" height="455" loading="lazy"
-                   alt="Elbow plot of within-cluster sum of squares against number of clusters, bending at K equals 3">
-              <figcaption><b>Elbow selection.</b> Inertia against K, bending at <b>K = 3</b>.</figcaption>
-            </figure>
-            <figure>
-              <img src="figs/clusters-3d.webp" width="746" height="666" loading="lazy"
-                   alt="3D scatter of customers in log-Recency, log-Frequency and log-Monetary space coloured by three K-means clusters">
-              <figcaption><b>The segments</b> in log-RFM space — at-risk, potential loyalists, loyal.</figcaption>
-            </figure>
-          </div>
-          <p style="margin-top:18px">
-            Three readable segments. The rule-based codes agreed at the extremes and
-            <b>disagreed in the middle</b> — which is exactly where a hard partition is least
-            defensible.
-          </p>
-
-          <div class="limits">
-            <p class="lh">What this does not establish</p>
-            <ul>
-              <li><b>The elbow is a heuristic, not a criterion.</b> No silhouette or gap statistic
-                was computed, so validity is argued visually rather than measured.</li>
-              <li><b>K-means assumes a shape the data doesn't have.</b> It wants spherical,
-                equal-variance clusters under Euclidean distance; log-RFM space is neither, so the
-                boundary is partly an artefact of forcing a partition onto a continuum.</li>
-              <li><b>Outliers pull centroids.</b> A few very high-Monetary customers exert
-                influence far beyond their count, and K-means can't set them aside.</li>
-              <li><b>Agreement isn't validation.</b> Both segmentations use the same three
-                features, so they share their blind spots.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="next">
-          <p class="nh">Where I'd take it</p>
-          <p>
-            Drop the hard partition. <b>Gaussian mixtures</b> for soft membership so the ambiguous
-            middle stays ambiguous; <b>DBSCAN</b> so a point can belong to nothing; <b>hierarchical
-            clustering</b> to test whether three is structure or an accident of K. And three
-            aggregates throw away the entire temporal sequence of a purchase history — I suspect
-            order matters more than RFM allows.
-          </p>
-        </div>
-      </article>
-
-      <!-- Churn -->
-      <article class="card rv">
-        <div class="card-head bd">
-          <div class="tags"><span class="tag tag-p">Coursework Project</span>
-            <span class="tag">Supervised learning</span><span class="tag">2024</span></div>
-          <h3>Predicting Customer Churn: five classifiers compared</h3>
-          <p class="byline">M.Sc. Big Data Analytics · 10,000 bank customers, 14 attributes</p>
-          <div class="q">
-            <span class="q-l">Question</span>
-            <p>Which model family earns its complexity on tabular behavioural data — and what
-              drives the prediction once you look inside?</p>
-          </div>
-        </div>
-        <div class="body">
-          <p class="sub">Method</p>
-          <p>
-            One-hot for Geography, binary for Gender, identifiers dropped. Several features were
-            visibly skewed, so I compared <b>log, square-root, Box–Cox and Yeo–Johnson</b> before
-            fixing the feature set. Five classifiers on a held-out split; the random forest tuned by
-            <b>randomised search over a 5-fold cross-validated grid</b>.
-          </p>
-
-          <p class="sub">Results</p>
-          <div class="tbl-wrap">
-            <table class="tbl">
-              <tr><th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>ROC-AUC</th></tr>
-              <tr><td>Logistic regression</td><td>75.67%</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Gradient boosting</td><td>84.13%</td><td>0.834</td><td>0.715</td><td>0.770</td><td>—</td></tr>
-              <tr><td>XGBoost</td><td>86.61%</td><td>0.836</td><td>0.793</td><td>0.814</td><td>0.9322</td></tr>
-              <tr><td>Random forest</td><td>87.98%</td><td>0.857</td><td>0.809</td><td>0.832</td><td>0.9396</td></tr>
-              <tr class="best"><td>Random forest, tuned</td><td>88.06%</td><td>0.859</td><td>0.809</td><td>0.833</td><td>—</td></tr>
-            </table>
-          </div>
-          <p class="tbl-hint">Scroll the table sideways →</p>
-
-          <div class="figs" style="margin-top:22px">
-            <figure>
-              <img src="figs/roc-rf.webp" width="567" height="457" loading="lazy"
-                   alt="ROC curve for the random forest classifier with area under the curve 0.9396">
-              <figcaption><b>Random forest ROC</b>, AUC 0.9396 — the best separation of the five.</figcaption>
-            </figure>
-            <figure>
-              <img src="figs/feature-importance.webp" width="972" height="547" loading="lazy"
-                   alt="Bar chart of random forest feature importances with Age highest at 0.28">
-              <figcaption><b>Feature importance.</b> <b>Age</b> at ≈0.28, roughly double the next
-                feature.</figcaption>
-            </figure>
-          </div>
-          <p style="margin-top:18px">
-            <b>Age outweighs every financial attribute</b> — which reframes churn here as
-            life-stage rather than economics. And logistic regression trails by twelve points,
-            so the boundary is genuinely non-linear, not just noisy.
-          </p>
-
-          <div class="limits">
-            <p class="lh">What this does not establish</p>
-            <ul>
-              <li><b>Tuning bought nothing.</b> 87.98% → 88.06% is eight hundredths of a point,
-                inside run-to-run variance. That's a null result, not an improvement.</li>
-              <li><b>Imbalance flatters every model.</b> Churners are ~20% of the sample, so
-                predicting "stays" scores near 80%. Recall tops out at 0.81 — one churner in five
-                still missed.</li>
-              <li><b>Impurity importance is biased</b> toward continuous features. Age is
-                continuous, Gender binary; the gap is partly an artefact of the measure. Permutation
-                or SHAP would be the honest test, and I ran neither.</li>
-              <li><b>No calibration.</b> AUC says the scores rank well; nothing here says the
-                probabilities mean what they claim — and any cost-sensitive threshold depends on
-                exactly that.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="next">
-          <p class="nh">Where I'd take it</p>
-          <p>
-            <b>Permutation and SHAP</b> over impurity, <b>calibration</b> before any threshold, and
-            the imbalance treated directly rather than reported over. The real question underneath:
-            is the Age effect a life-stage signal, or a proxy for something this dataset never
-            measured?
-          </p>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ COURSEWORK ============ -->
-<section id="more" class="alt">
-  <div class="wrap">
-    <p class="label rv">Coursework &amp; explorations</p>
-    <h2 class="rv">Smaller studies</h2>
-    <p class="lede rv" style="margin-bottom:34px">
-      Dashboards and model comparisons from the M.Sc. and independent practice.
-    </p>
-    <div class="duo">
-
-      <article class="mini rv">
-        <div class="mini-img">
-          <img src="../assets/bank-churn.webp" width="1600" height="620" loading="lazy"
-               alt="Tableau dashboard analysing bank customer churn by country, product count and credit score">
-        </div>
-        <div class="mini-body">
-          <h3>Bank Churn — the visual layer</h3>
-          <p class="grow">
-            Tableau counterpart to the churn study. The finding that stuck: customers holding
-            <b>four products churned at close to 100%</b>. Over-selling tracks with
-            dissatisfaction, not loyalty.
-          </p>
-          <div class="chips"><span class="chip">Tableau</span><span class="chip">scikit-learn</span>
-            <span class="chip">XGBoost</span></div>
-        </div>
-      </article>
-
-      <article class="mini rv">
-        <div class="mini-img">
-          <img src="../assets/movie-trends.webp" width="1600" height="608" loading="lazy"
-               alt="Power BI dashboard showing box office revenue trends, genre performance and audience ratings">
-        </div>
-        <div class="mini-body">
-          <h3>Cinematic Insights</h3>
-          <p class="grow">
-            Box office revenue, genre performance and ratings across two decades, segmented into
-            high and low revenue bands to isolate what separates a hit from an underperformer.
-          </p>
-          <div class="chips"><span class="chip">Power BI</span><span class="chip">Data modelling</span></div>
-        </div>
-      </article>
-
-      <article class="mini rv">
-        <div class="mini-img">
-          <img src="../assets/pp-resource-overview.webp" width="765" height="569" loading="lazy"
-               alt="Dashboard page showing role-wise hours worked and employee utilisation tagging">
-        </div>
-        <div class="mini-body">
-          <h3>Resource &amp; Utilisation View</h3>
-          <p class="grow">
-            Task completion by employee, role-wise hours, and over/under-utilisation tagging —
-            the second page of the partner dashboard, driven by custom DAX bands.
-          </p>
-          <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span></div>
-        </div>
-      </article>
-
-      <article class="mini rv">
-        <div class="mini-body">
-          <h3>ETH-USD Time Series Forecasting</h3>
-          <p>
-            Four approaches on five years of daily Ethereum prices, scored by RMSE on a held-out
-            split. <b>LSTM won by ~7.6×</b> — the series carries non-linear structure the classical
-            models can't represent.
-          </p>
-          <div class="bars" id="bars">
-            <div class="bar-row best"><span class="bar-name">LSTM</span>
-              <span class="bar-track"><span class="bar-fill" data-pct="8.5"></span></span>
-              <span class="bar-val">135.82</span></div>
-            <div class="bar-row"><span class="bar-name">SARIMA</span>
-              <span class="bar-track"><span class="bar-fill" data-pct="64.7"></span></span>
-              <span class="bar-val">1031.44</span></div>
-            <div class="bar-row"><span class="bar-name">Holt's Winter</span>
-              <span class="bar-track"><span class="bar-fill" data-pct="65.2"></span></span>
-              <span class="bar-val">1040.08</span></div>
-            <div class="bar-row"><span class="bar-name">Prophet</span>
-              <span class="bar-track"><span class="bar-fill" data-pct="100"></span></span>
-              <span class="bar-val">1594.13</span></div>
-          </div>
-          <p class="nb grow">
-            Caveat: the LSTM runs unseeded, so its RMSE shifts between runs. One run against
-            deterministic baselines is suggestive, not conclusive.
-          </p>
-          <div class="chips"><span class="chip">TensorFlow</span><span class="chip">statsmodels</span>
-            <span class="chip">Prophet</span><span class="chip">pmdarima</span></div>
-          <a class="clink" href="https://github.com/chaits1412/data-analytics-mini-projects"
-             target="_blank" rel="noopener">View on GitHub →</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ INTERESTS ============ -->
-<section id="interests">
-  <div class="wrap">
-    <p class="label rv">Direction</p>
+    <p class="label rv"><span class="num">05</span> Direction</p>
     <h2 class="rv">What I want to work on next</h2>
     <p class="lede rv" style="margin-bottom:34px">
-      Each one traceable to a limitation above — not a topic chosen from the outside.
+      Every one of these started as something that went wrong above. The limitation on the left is
+      real; the direction on the right is where I'd go because of it.
     </p>
-    <div class="ints">
-      <div class="int rv">
-        <h3>Clustering when the assumptions fail</h3>
-        <p>Density and mixture models for data that is heavy-tailed and continuous at the
-          boundaries. <b>When should a method be allowed to assign nothing at all?</b></p>
-        <span class="from">From: K-means partitioning a continuum</span>
-      </div>
-      <div class="int rv">
-        <h3>Interpretability that survives scrutiny</h3>
-        <p>Attribution that holds up against the bias of the measure itself — and
-          <b>calibration, so a probability means what it says.</b></p>
-        <span class="from">From: an importance ranking I couldn't fully trust</span>
-      </div>
-      <div class="int rv">
-        <h3>Learning where data can't leave</h3>
-        <p>My audit tooling runs entirely on-premises by necessity. <b>Useful models under strict
-          data locality</b> is a constraint I find interesting, not inconvenient.</p>
-        <span class="from">From: building an on-premises NLP pipeline</span>
-      </div>
+
+    <div class="dirs">
+
+      <article class="dir rv">
+        <div class="dir-rail"><span class="dir-num">01</span></div>
+        <div class="dir-body">
+          <h3>Clustering when the assumptions fail</h3>
+          <p>
+            K-means returns three neat segments whether or not three segments exist. I want methods
+            that can express doubt — density and mixture models for data that is heavy-tailed and
+            genuinely continuous at the boundaries. <b>When should a method be allowed to assign
+            nothing at all?</b>
+          </p>
+          <div class="flow">
+            <span class="flow-box"><span class="fl">Limitation hit</span>
+              K-means partitioning a continuum</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-box flow-to"><span class="fl">Direction</span>
+              GMM · DBSCAN · soft membership</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="dir rv">
+        <div class="dir-rail"><span class="dir-num">02</span></div>
+        <div class="dir-body">
+          <h3>Interpretability that survives scrutiny</h3>
+          <p>
+            My churn model said Age mattered most — but impurity importance favours continuous
+            features whether or not they carry signal, so I couldn't tell how much of that was the
+            data and how much was the measure. <b>Attribution has to hold up against its own
+            bias, and a probability has to mean what it says.</b>
+          </p>
+          <div class="flow">
+            <span class="flow-box"><span class="fl">Limitation hit</span>
+              An importance ranking I couldn't fully trust</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-box flow-to"><span class="fl">Direction</span>
+              Permutation · SHAP · calibration</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="dir rv">
+        <div class="dir-rail"><span class="dir-num">03</span></div>
+        <div class="dir-body">
+          <h3>Learning where data can't leave</h3>
+          <p>
+            The audit tooling I build runs entirely on-premises because the documents are not
+            permitted to leave the building. That constraint shapes every design decision — and
+            it's the same constraint facing healthcare, finance and government data.
+            <b>Useful models under strict data locality is a research problem, not an
+            inconvenience.</b>
+          </p>
+          <div class="flow">
+            <span class="flow-box"><span class="fl">Constraint met</span>
+              Documents that cannot reach an external API</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-box flow-to"><span class="fl">Direction</span>
+              On-device &amp; privacy-preserving ML</span>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -892,7 +1003,6 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
     <div class="edu">
       <div class="rv">
         <p class="label">Education</p>
-
         <div class="deg">
           <span class="deg-ic" style="background:rgba(108,63,168,.1)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6C3FA8" stroke-width="1.7"
@@ -908,7 +1018,6 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
             <span class="cg"><span class="g">9.35 / 10</span><span class="gl">CGPA</span></span>
           </div>
         </div>
-
         <div class="deg">
           <span class="deg-ic" style="background:rgba(37,99,168,.1)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563A8" stroke-width="1.7"
@@ -933,7 +1042,6 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
 
       <div class="rv">
         <p class="label">Certificates</p>
-
         <div class="cert cert-new">
           <span class="cert-ic" style="background:rgba(176,134,6,.12)">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B08606" stroke-width="1.8"
@@ -949,50 +1057,39 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
               query optimisation.</p>
           </div>
         </div>
-
         <div class="cert">
           <span class="cert-ic" style="background:rgba(37,99,168,.1)">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2563A8" stroke-width="1.8"
                  stroke-linecap="round" stroke-linejoin="round">
               <path d="M17.5 18.5H7a4.5 4.5 0 0 1-.9-8.9A6 6 0 0 1 17.6 9.4a4.6 4.6 0 0 1-.1 9.1z"/></svg>
           </span>
-          <div>
-            <p class="cert-n">Introduction to Cloud Computing</p>
-            <p class="cert-m">SimpliLearn · Jan 2024</p>
-          </div>
+          <div><p class="cert-n">Introduction to Cloud Computing</p>
+            <p class="cert-m">SimpliLearn · Jan 2024</p></div>
         </div>
-
         <div class="cert">
           <span class="cert-ic" style="background:rgba(18,130,122,.1)">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#12827A" stroke-width="1.8"
                  stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M2 16l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </span>
-          <div>
-            <p class="cert-n">Machine Learning</p>
-            <p class="cert-m">Great Learning Academy · Dec 2023</p>
-          </div>
+          <div><p class="cert-n">Machine Learning</p>
+            <p class="cert-m">Great Learning Academy · Dec 2023</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
 <section class="contact">
   <div class="wrap">
     <p class="label">Contact</p>
     <h2>Let's talk<em>.</em></h2>
-    <p class="lede">
-      Happy to share the full project reports, or talk through any of the work above.
-    </p>
+    <p class="lede">Happy to share the full project reports, or talk through any of the work above.</p>
     <div class="ccards">
       <a class="ccard" href="mailto:chaits1412@gmail.com">
-        <span><span class="cl">Email</span><span class="cv">chaits1412@gmail.com</span></span>
-      </a>
+        <span><span class="cl">Email</span><span class="cv">chaits1412@gmail.com</span></span></a>
       <a class="ccard" href="https://www.linkedin.com/in/chaitali-ranalkar-1410cr" target="_blank" rel="noopener">
-        <span><span class="cl">LinkedIn</span><span class="cv">chaitali-ranalkar</span></span>
-      </a>
+        <span><span class="cl">LinkedIn</span><span class="cv">chaitali-ranalkar</span></span></a>
     </div>
     <div class="cta">
       <a class="btn btn-light" href="../Chaitali-Ranalkar-Resume.pdf" download>Download CV ↓</a>
@@ -1011,8 +1108,7 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
 </footer>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Enlarged figure">
-  <button class="lb-x" aria-label="Close">&times;</button>
-  <img id="lb-img" alt="">
+  <button class="lb-x" aria-label="Close">&times;</button><img id="lb-img" alt="">
 </div>
 
 <script>
@@ -1025,7 +1121,6 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
   var cv = document.getElementById('kcanvas'), ctx = cv.getContext('2d');
   var COLORS = ['#6C3FA8', '#12827A', '#B08606'];
   var pts = [], cents = [], W = 0, H = 0, iter = 0, settled = false;
-
   function gauss() {
     var u = 1 - Math.random(), v = Math.random();
     return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
@@ -1037,9 +1132,9 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
     cv.width = W * dpr; cv.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     var blobs = [
-      { x: W * 0.60, y: H * 0.30, s: Math.min(W, H) * 0.082 },
-      { x: W * 0.83, y: H * 0.55, s: Math.min(W, H) * 0.092 },
-      { x: W * 0.62, y: H * 0.80, s: Math.min(W, H) * 0.078 }
+      { x: W * 0.62, y: H * 0.28, s: Math.min(W, H) * 0.09 },
+      { x: W * 0.84, y: H * 0.56, s: Math.min(W, H) * 0.1 },
+      { x: W * 0.64, y: H * 0.82, s: Math.min(W, H) * 0.085 }
     ];
     var n = W < 700 ? 170 : 380;
     pts = [];
@@ -1083,7 +1178,7 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
       var p = pts[i];
       ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = p.c < 0 ? '#AEB8C6' : COLORS[p.c];
-      ctx.globalAlpha = p.c < 0 ? .55 : .6;
+      ctx.globalAlpha = p.c < 0 ? .5 : .58;
       ctx.fill();
     }
     ctx.globalAlpha = 1;
@@ -1147,6 +1242,24 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
     es.forEach(function (e) { if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); } });
   }, { threshold: .6 });
   document.querySelectorAll('[data-count]').forEach(function (el) { cio.observe(el); });
+
+  /* ---- DS009: strike each hypothesis, then reveal the verdict ---- */
+  var elim = document.getElementById('elim');
+  if (elim) {
+    var eio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var hyps = elim.querySelectorAll('.hyp');
+        hyps.forEach(function (h, i) {
+          setTimeout(function () { h.classList.add('out'); }, reduce ? 0 : 340 + i * 400);
+        });
+        setTimeout(function () { document.getElementById('verdict').classList.add('in'); },
+          reduce ? 0 : 340 + hyps.length * 400 + 180);
+        eio.unobserve(e.target);
+      });
+    }, { threshold: .3 });
+    eio.observe(elim);
+  }
 
   /* ---- RMSE bars ---- */
   var bars = document.getElementById('bars');

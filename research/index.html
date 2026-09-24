@@ -135,15 +135,16 @@ section{padding:80px 0}
 .pipe i{color:var(--faint);font-style:normal}
 .shot{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--tint)}
 .shot img{width:100%;height:auto;display:block;cursor:zoom-in}
-.shot-duo{display:grid;grid-template-columns:1.6fr 1fr;gap:1px;background:var(--line);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-@media(max-width:760px){.shot-duo{grid-template-columns:1fr}}
-.shot-duo figure{background:var(--tint);margin:0;display:flex;flex-direction:column}
-.shot-duo img{width:100%;height:auto;display:block;cursor:zoom-in;border-radius:0;border:none}
-.shot-duo figcaption{padding:12px 16px;background:var(--surface);flex:1;
-  font-size:.82rem;color:var(--faint);line-height:1.5;margin:0}
-.shot-duo figcaption b{color:var(--ink);font-weight:600;display:block;margin-bottom:2px}
-.figs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+/* Dashboard pages are detail-dense: full width, stacked, never side by side. */
+.shots{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--tint)}
+.shots figure{margin:0;border-bottom:1px solid var(--line)}
+.shots figure:last-child{border-bottom:none}
+.shots img{width:100%;height:auto;display:block;cursor:zoom-in;border:none;border-radius:0}
+.shots figcaption{padding:13px 32px 16px;background:var(--surface);
+  font-size:.83rem;color:var(--faint);line-height:1.5;margin:0}
+@media(max-width:700px){.shots figcaption{padding:12px 20px 14px}}
+.shots figcaption b{color:var(--ink);font-weight:600}
+.figs{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;align-items:start}
 @media(max-width:760px){.figs{grid-template-columns:1fr}}
 figure{margin:0}
 figure img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);
@@ -389,10 +390,6 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
       <h1>Chaitali Ranalkar</h1>
       <p class="thesis">Here's how I went from building &lsquo;data dumps&rsquo;
         to designing <em>actionable data products.</em></p>
-      <p class="hero-sub">
-        Machine learning, databases and generative AI — applied to problems where the answer has
-        to survive scrutiny, not just look clean.
-      </p>
       <div class="cta">
         <a class="btn btn-pri" href="#projects">See the work ↓</a>
         <a class="btn btn-sec" href="#research">Research</a>
@@ -405,12 +402,12 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
 <div class="strip">
   <div class="wrap" style="padding:0">
     <div class="strip-in">
+      <div class="st"><div class="n"><span data-count="150">0</span><span class="u">K</span></div>
+        <div class="l">customer records analysed in a single investigation</div></div>
+      <div class="st"><div class="n"><span data-count="5">0</span></div>
+        <div class="l">machine-learning models benchmarked head to head</div></div>
       <div class="st"><div class="n"><span data-count="40">0</span><span class="u">%</span></div>
-        <div class="l">less manual effort after automating ITGC testing</div></div>
-      <div class="st"><div class="n">0<span class="u">.94</span></div>
-        <div class="l">ROC-AUC on the best of five churn classifiers</div></div>
-      <div class="st"><div class="n"><span data-count="26">0</span></div>
-        <div class="l">documented SQL queries in one root-cause investigation</div></div>
+        <div class="l">of manual audit testing automated away</div></div>
     </div>
   </div>
 </div>
@@ -468,9 +465,25 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
             <div class="l">hypotheses tested on one anomaly — all four eliminated</div></div>
         </div>
 
-        <div class="shot">
-          <img src="../assets/qc-leakage-map.webp" width="1008" height="691" loading="lazy"
-               alt="Power BI dashboard mapping zero-result searches, late deliveries and cancelled orders by area">
+        <div class="shots">
+          <figure>
+            <img src="../assets/qc-health-check.webp" width="1015" height="691" loading="lazy"
+                 alt="Power BI page showing order volume, revenue, delivery speed and product availability">
+            <figcaption><b>Page 1 — Health check.</b> Order volume, revenue, delivery speed and
+              which dark stores carry the most revenue at risk.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/qc-leakage-map.webp" width="1008" height="691" loading="lazy"
+                 alt="Power BI page mapping zero-result searches, late deliveries and cancelled orders by area">
+            <figcaption><b>Page 2 — Leakage map.</b> Where demand is lost: zero-result searches,
+              late deliveries, cancellations by area, and the categories worst hit.</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/qc-action-center.webp" width="1003" height="684" loading="lazy"
+                 alt="Power BI page showing refund amounts, resolution times and peak-hour delay spikes">
+            <figcaption><b>Page 3 — Action center.</b> Refund amounts, resolution times, peak-hour
+              delay spikes by store, and the resolution action per ticket.</figcaption>
+          </figure>
         </div>
 
         <div class="body">
@@ -514,7 +527,7 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
               seeing each other's engagements.</p>
           </div>
         </div>
-        <div class="shot-duo">
+        <div class="shots">
           <figure>
             <img src="../assets/pp-project-overview.webp" width="1501" height="1056" loading="lazy"
                  alt="Dashboard sheet one: project status, complexity, cost versus benefit and cost overrun by project">
@@ -815,36 +828,66 @@ footer{background:var(--ink);color:rgba(242,245,248,.45);
         </div>
       </article>
 
-      <article class="mini rv" style="grid-column:1/-1">
-        <div class="mini-body">
+      <article class="card rv" style="grid-column:1/-1;margin-top:2px">
+        <div class="card-head bd">
+          <div class="tags"><span class="tag">Coursework</span>
+            <span class="tag">TensorFlow · statsmodels · Prophet</span><span class="tag">2024</span></div>
           <h3>ETH-USD Time Series Forecasting</h3>
-          <p>
-            Four approaches on five years of daily Ethereum prices, scored by RMSE on a held-out
-            split. <b>LSTM won by ~7.6×</b> — the series carries non-linear structure the classical
-            models can't represent.
-          </p>
-          <div class="bars" id="bars">
-            <div class="bar-row best"><span class="bar-name">LSTM</span>
-              <span class="bar-track"><span class="bar-fill" data-pct="8.5"></span></span>
-              <span class="bar-val">135.82</span></div>
-            <div class="bar-row"><span class="bar-name">SARIMA</span>
-              <span class="bar-track"><span class="bar-fill" data-pct="64.7"></span></span>
-              <span class="bar-val">1031.44</span></div>
-            <div class="bar-row"><span class="bar-name">Holt's Winter</span>
-              <span class="bar-track"><span class="bar-fill" data-pct="65.2"></span></span>
-              <span class="bar-val">1040.08</span></div>
-            <div class="bar-row"><span class="bar-name">Prophet</span>
-              <span class="bar-track"><span class="bar-fill" data-pct="100"></span></span>
-              <span class="bar-val">1594.13</span></div>
+          <div class="q">
+            <span class="q-l">Question</span>
+            <p>Five years of a famously unpredictable asset. Can a neural network read structure
+              that ARIMA-family models cannot?</p>
           </div>
-          <p class="nb">
-            Caveat: the LSTM runs unseeded, so its RMSE shifts between runs. One run against
-            deterministic baselines is suggestive, not conclusive.
-          </p>
-          <div class="chips"><span class="chip">TensorFlow</span><span class="chip">statsmodels</span>
-            <span class="chip">Prophet</span><span class="chip">pmdarima</span></div>
+        </div>
+
+        <div class="shots">
+          <figure>
+            <img src="figs/eth-prices.webp" width="1300" height="847" loading="lazy"
+                 alt="Line chart of ETH-USD daily closing prices from 2020 to 2024, peaking near 4800 in late 2021">
+            <figcaption><b>The series.</b> 1,827 daily closes, Sept 2019 – Aug 2024. A 20× run-up,
+              a collapse, and a partial recovery — non-stationary by inspection, confirmed by an
+              ADF test (p = 0.34).</figcaption>
+          </figure>
+        </div>
+
+        <div class="body">
+          <p class="sub">Result</p>
+          <div class="figs">
+            <figure>
+              <img src="figs/eth-lstm-forecast.webp" width="1300" height="947" loading="lazy"
+                   alt="LSTM forecast plotted against actual ETH prices over the test period, tracking closely">
+              <figcaption><b>LSTM vs. actual</b> across the held-out period — it tracks the
+                turning points, not just the trend.</figcaption>
+            </figure>
+            <div>
+              <p style="margin-bottom:14px;font-size:.95rem">
+                Four approaches scored by RMSE on the same held-out split.
+                <b>LSTM won by roughly 7.6×.</b>
+              </p>
+              <div class="bars" id="bars">
+                <div class="bar-row best"><span class="bar-name">LSTM</span>
+                  <span class="bar-track"><span class="bar-fill" data-pct="8.5"></span></span>
+                  <span class="bar-val">135.82</span></div>
+                <div class="bar-row"><span class="bar-name">SARIMA</span>
+                  <span class="bar-track"><span class="bar-fill" data-pct="64.7"></span></span>
+                  <span class="bar-val">1031.44</span></div>
+                <div class="bar-row"><span class="bar-name">Holt's Winter</span>
+                  <span class="bar-track"><span class="bar-fill" data-pct="65.2"></span></span>
+                  <span class="bar-val">1040.08</span></div>
+                <div class="bar-row"><span class="bar-name">Prophet</span>
+                  <span class="bar-track"><span class="bar-fill" data-pct="100"></span></span>
+                  <span class="bar-val">1594.13</span></div>
+              </div>
+              <p class="nb" style="margin-top:14px">
+                Caveat: the LSTM runs unseeded, so its RMSE shifts between runs. One run against
+                deterministic baselines is suggestive, not conclusive.
+              </p>
+            </div>
+          </div>
+          <div class="chips"><span class="chip">TensorFlow / Keras</span><span class="chip">statsmodels</span>
+            <span class="chip">pmdarima</span><span class="chip">Prophet</span></div>
           <a class="clink" href="https://github.com/chaits1412/data-analytics-mini-projects"
-             target="_blank" rel="noopener">View on GitHub →</a>
+             target="_blank" rel="noopener">View the notebook on GitHub →</a>
         </div>
       </article>
 
